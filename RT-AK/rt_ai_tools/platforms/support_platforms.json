@@ -1,4 +1,4 @@
 {
-	"plugin_stm32": "https://git.rt-thread.com/research/edge-ai-group/rt-ak-plugin-stm32.git",
+	"plugin_stm32": "https://github.com/RT-Thread/RT-AIKit-plugin-stm32.git",
 	"plugin_k210": "https://git.rt-thread.com/lebhoryi/k210.git"
 }
