@@ -29,9 +29,7 @@
 
 - 下载 `X-CUBE-AI` 
 
-  - 地址，以下二选一：
-
-    [官网](https://www.st.com/zh/embedded-software/x-cube-ai.html)  | [其他](http://117.143.63.254:9012/www/RT-AK/stm32ai-windows-5.2.0.zip)
+  - [下载地址](https://www.st.com/zh/embedded-software/x-cube-ai.html)
 
   - 版本: v5.2.0
 
