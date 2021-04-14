@@ -146,12 +146,12 @@ $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<p
 
 ## 其他-使用第三方目标平台项目实战
 
-| 配置           | 说明                                             |
-| -------------- | ------------------------------------------------ |
-| 第三方目标平台 | `STM32`                                          |
-| 项目工程       | `ART-PI BSP`                                     |
-| 神经网络模型   | `rt_ai_tools/Model/keras_mnist.h5`               |
-| 项目实战手册   | [RT-AK 快速上手.md](documents/RT-AK 快速上手.md) |
+| 配置           | 说明                                           |
+| -------------- | ---------------------------------------------- |
+| 第三方目标平台 | `STM32`                                        |
+| 项目工程       | `ART-PI BSP`                                   |
+| 神经网络模型   | `rt_ai_tools/Model/keras_mnist.h5`             |
+| 项目实战手册   | [RT-AK快速上手.md](documents/RT-AK快速上手.md) |
 
 # 未来将完善
 
