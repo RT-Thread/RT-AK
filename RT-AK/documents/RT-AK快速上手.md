@@ -82,7 +82,7 @@
 
 请在 `edge-ai/RTAK/tools` 路径下运行该程序。
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210223145923.png)
+![image-20210412194422222](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210412194423.png)
 
 ```shell
 # 基础运行命令
@@ -92,7 +92,7 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 python aitools.py --project="D:\RT-ThreadStudio\workspace\test" --model="./Models/keras_mnist.h5" --platform=stm32 --ext_tools="D:\Program Files (x86)\stm32ai-windows-5.2.0\windows" --clear
 ```
 
-![image-20210401181247394](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401181248.png)
+![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210414174057.png)
 
 ## 3.2 其他运行参数补充说明
 

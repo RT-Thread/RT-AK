@@ -1,11 +1,11 @@
 ### 目录
 
-- [1. RT-AK](#1.RT-AK)
-- [2. 持续构建](#2.持续构建)
+- [1. RT-AK](#1.-RT-AK-简介)
+- [2. 持续构建](#2.-持续构建)
   - [官方版本](#官方版本)
   - [社区构建](#社区构建)
-- [3. 获得帮助](#3.获得帮助)
-- [4. 附加文件](#4.附加文件)
+- [3. 获得帮助](#3.-获得帮助)
+- [4. 附加文件](#4.-附加文件)
 
 # 1. RT-AK 简介
 
@@ -41,7 +41,7 @@ $ python aitools.py --model xxx...
 
 # 3. 获得帮助
 
-- [RT-AK 常见问题解答](./RT-AK/documents/RT-AK 常见问题解答.md)
+- [RT-AK常见问题解答](./RT-AK/documents/RT-AK常见问题解答.md)
 
 - [RT-Thread 社区论坛](https://club.rt-thread.org/)
 
@@ -57,10 +57,10 @@ $ python aitools.py --model xxx...
 
 对项目内部细节感兴趣的开发人员，在 [RT-AK/documents](RT-AK/documents) 文件夹中有更多技术文档，欢迎贡献文档、示例工程及平台支持包(独立仓库)
 
-- [RT-AK 常见问题解答.md](RT-AK/documents/RT-AK 常见问题解答.md)
-- [RT-AK 代码贡献手册.md](RT-AK/documents/RT-AK 代码贡献手册.md)
-- [RT-AK 开发手册.md](RT-AK/documents/RT-AK 开发手册.md)
-- [RT-AK 快速上手.md](RT-AK/documents/RT-AK 快速上手.md)
-- [RT-AK 前期知识.md](RT-AK/documents/RT-AK 关于模型补充说明.md)
+- [RT-AK常见问题解答.md](RT-AK/documents/RT-AK常见问题解答.md)
+- [RT-AK代码贡献手册.md](RT-AK/documents/RT-AK代码贡献手册.md)
+- [RT-AK开发手册.md](RT-AK/documents/RT-AK开发手册.md)
+- [RT-AK快速上手.md](RT-AK/documents/RT-AK快速上手.md)
+- [RT-AK关于模型补充说明.md](RT-AK/documents/RT-AK关于模型补充说明.md)
 
-- [RT-Thread 编程指南.pdf](RT-AK/documents/RT-Thread 编程指南.pdf)
+- [RT-Thread编程指南.pdf](RT-AK/documents/RT-Thread编程指南.pdf)
