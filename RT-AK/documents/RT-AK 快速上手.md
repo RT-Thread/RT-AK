@@ -22,7 +22,10 @@
 |   3   | `STM32 AI` 插件 | `X-CUBE-AI` 下载解压，下文有介绍     |
 |   4   |     `RT-AK`     | `RT-AK` 代码克隆到本地               |
 
-- 下载 `ART-PI BSP` 地址： [ART-PI](http://117.143.63.254:9012/www/RT-AK/sdk-bsp-artpi.zip)
+- 准备 `ART-PI BSP` ，以下二选一
+
+  - RT-Thread Studio 创建 ART-PI [教程](https://art-pi.gitee.io/website/docs/#/development/ART-Pi_%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C)
+  - 我们准备好的下载地址： [ART-PI](http://117.143.63.254:9012/www/RT-AK/sdk-bsp-artpi.zip)
 
 - 下载 `X-CUBE-AI` 
 
@@ -279,7 +282,7 @@ $ scons -j 6
 
 就可以`RT-Thread` 系统上做应用开发啦。
 
-### 示例应用代码提供
+## 示例应用代码提供
 
 我们提供了一份运行模型推理的示例应用代码，可参考 [6. RT-AK MNIST 应用参考示例](# 6. RT-AK MNIST 应用参考示例)，也可直接下载。
 

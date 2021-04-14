@@ -24,3 +24,15 @@ RT-AK可以查看运行时的一些状态或性能信息吗?
 
 **A:** 将 Git 添加到系统环境变量即可
 
+## Q5
+
+编译成功，但是烧录失败，问题是在于下载算法没有设置，
+
+- Keil 用户请参考：[Q7：使用MDK 下载程序失败](https://art-pi.gitee.io/website/docs/#/development/ART-Pi_常见问题解答?id=q7：使用mdk-下载程序失败)
+
+## Q6
+
+缺少 ST-Link 驱动，在设备管理器查看 COM 口的时候，发现是个黄色的感叹号
+
+解决：[需要更新 ST-LINK 驱动](https://art-pi.gitee.io/website/docs/#/development/ART-Pi_常见问题解答?id=a-需要更新-st-link-驱动，a-hrefhttpswwwstcomzhdevelopment-toolsstsw-link009html-target_blank-relnoopener下载地址)   [下载地址](https://www.st.com/zh/development-tools/stsw-link009.html)
+
