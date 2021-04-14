@@ -1,0 +1,8 @@
+scons
+serial
+serial-tool
+pyyaml
+pytest
+pytest-env  # 将环境变量传递给pytest
+pytest-html
+pytest-bdd
