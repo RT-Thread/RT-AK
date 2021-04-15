@@ -49,7 +49,7 @@ $ python aitools.py --model xxx...
 
 - 公众号： `RTThread 物联网操作系统`
 
-  <img src="RT-AK\documents\imgs\20210114105417.png" style="zoom:50%;" />
+  <img src="./RT-AK/documents/imgs/20210114105417.png" style="zoom:50%;" />
   
 - 商业合作：平台支持、AI 解决方案定制等请联系 business@rt-thread.com
 
