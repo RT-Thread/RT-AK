@@ -36,3 +36,9 @@ RT-AK可以查看运行时的一些状态或性能信息吗?
 
 解决：[需要更新 ST-LINK 驱动](https://art-pi.gitee.io/website/docs/#/development/ART-Pi_常见问题解答?id=a-需要更新-st-link-驱动，a-hrefhttpswwwstcomzhdevelopment-toolsstsw-link009html-target_blank-relnoopener下载地址)   [下载地址](https://www.st.com/zh/development-tools/stsw-link009.html)
 
+Q7：
+
+如果在代码运行的过程中，发现 git 克隆插件仓库的时候，极为缓慢，
+
+**A:** 可以将插件仓库复制到 gitee，同时更改 `RT-AK/rt_ai_tools/platforms/support_platforms.json` 地址即可实现 git 加速
+
