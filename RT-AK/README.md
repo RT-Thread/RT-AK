@@ -18,13 +18,13 @@
 
 `RT-AK` 的工作基于包含 RT-Thread 系统的 `BSP`，最后的结果将 AI 模型集成进 `BSP` 中，用户可以在上面根据 `RT-AK`  提供的 `API` 进行项目开发。
 
-![](.\documents\imgs\20210412202832.png)
+![](./documents/imgs/20210412202832.png)
 
 <center><font size=2 color="gray">RT-AK 工作方式</font></center>
 
 ## 1.2 RT-AK 两大组件
 
-![使用第三方目标平台插件](.\documents\imgs\20210331173329.png)
+![使用第三方目标平台插件](./documents/imgs/20210331173329.png)
 
 <center><font size=2 color="gray">使用第三方目标平台插件</font></center>
 
@@ -44,7 +44,7 @@
 
 ## 1.3 RT-AK 架构
 
-![20210412203032](.\documents\imgs\20210412203032.png)
+![20210412203032](./documents/imgs/20210412203032.png)
 
 <center><font size=2 color="gray">RT-AK 架构图</font></center>
 
@@ -113,11 +113,11 @@ $ python aitools.py --project=<your_bsp_path>
 $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<platform>
 ```
 
-![20210401101235](.\documents\imgs\20210401101235.png)
+![20210401101235](./documents/imgs/20210401101235.png)
 
 <center><font size=2 color="gray">使用默认模型和默认目标平台工作</font></center>
 
-![20210401100920](.\documents\imgs\20210401100920.png)
+![20210401100920](./documents/imgs/20210401100920.png)
 
 <center><font size=2 color="gray">指定模型参数和目标平台插件</font></center>
 
@@ -127,7 +127,7 @@ $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<p
 
 示例中选择的是 `scons` 编译 (在这里默认你已经配置好了 `RT-Thread` 的 [env](https://www.rt-thread.org/document/site/#) 环境，并且会使用 `scons -j 6` 编译)
 
-![20210331171829](.\documents\imgs\20210331171829.png)
+![20210331171829](./documents/imgs/20210331171829.png)
 
 <center><font size=2 color="gray">scons 编译成功界面</font></center>
 

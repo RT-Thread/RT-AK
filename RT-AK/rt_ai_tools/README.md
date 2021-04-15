@@ -24,7 +24,7 @@
 
 - How to use RT-AK Tools? The key file is aitools.py
 
-![20210331183423](.\Documents\imgs\20210331183423.png)
+![20210331183423](./Documents/imgs/20210331183423.png)
 
 # 0x01 准备工作
 
@@ -77,7 +77,7 @@ D:.
 $ python aitools.py --help
 ```
 
-![20210414173800](.\Documents\imgs\20210414173800.png)
+![20210414173800](./Documents/imgs/20210414173800.png)
 
 # 0x04 演示示例
 
