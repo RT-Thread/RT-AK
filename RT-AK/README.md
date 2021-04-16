@@ -1,16 +1,16 @@
 # 目录
 
-- [1. 简介](# 1. 简介)
-- [2. 目录结构](# 2. 目录结构)
-- [3. 演示示例](# 3. 演示示例)
-  - [step 1 准备](# step 1 准备)
-  - [step 2 使用 RT-AK](# step 2 使用 RT-AK)
-  - [step 3 获得全新项目工程](# step 3 获得全新项目工程)
-  - [step 4 下载固件](# step 4 下载固件)
-  - [其他 - 项目实战](# 其他 - 项目实战)
-- [4. 未来将完善](# 4. 未来将完善)
+- [1. 简介](#简介)
+- [2. 目录结构](#目录结构)
+- [3. 演示示例](#演示示例)
+  - [step 1 准备](#step-1-准备)
+  - [step 2 使用 RT-AK](#step-2-使用-RT-AK)
+  - [step 3 编译](#step-3-编译)
+  - [step 4 下载固件](#step-4-下载固件)
+  - [其他 - 项目实战](#其他-使用第三方目标平台项目实战)
+- [4. 未来将完善](#未来将完善)
 
-# 1. 简介
+# 简介
 
 `RT-AK` 是 `RT-Thread` 团队对 `RT-Thread` 系统所开发的 `AI` 套件，一键将 `AI` 模型部署到 `RT-Thread` 系统中，让用户可以更简单方便的开发自己的应用程序。
 
@@ -18,13 +18,13 @@
 
 `RT-AK` 的工作基于包含 RT-Thread 系统的 `BSP`，最后的结果将 AI 模型集成进 `BSP` 中，用户可以在上面根据 `RT-AK`  提供的 `API` 进行项目开发。
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210412202832.png)
+![](./documents/imgs/20210412202832.png)
 
 <center><font size=2 color="gray">RT-AK 工作方式</font></center>
 
 ## 1.2 RT-AK 两大组件
 
-![使用第三方目标平台插件](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210331173329.png)
+![使用第三方目标平台插件](./documents/imgs/20210331173329.png)
 
 <center><font size=2 color="gray">使用第三方目标平台插件</font></center>
 
@@ -44,7 +44,7 @@
 
 ## 1.3 RT-AK 架构
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210412203032.png)
+![20210412203032](./documents/imgs/20210412203032.png)
 
 <center><font size=2 color="gray">RT-AK 架构图</font></center>
 
@@ -52,7 +52,7 @@
 
 上图右半部分是 `RT-AK Libs` 的简单的架构图，工作在单片机。
 
-# 2. 目录结构
+# 目录结构
 
 ```shell
 D:\Project\edge-ai\RT-AK>tree /a
@@ -76,7 +76,7 @@ D:.
 | `rt_ai_tools` | `RT-AK Tools`，使用第三方目标平台插件进行模型转换等工作  |
 | `test`        | `RT-AK` 测试用例，使用的是 `Pytest-bdd` 测试框架         |
 
-# 3. 演示示例
+# 演示示例
 
 - [x] **仅支持 `Windows 10`**
 - [x] **Python >= 3.7**
@@ -113,11 +113,11 @@ $ python aitools.py --project=<your_bsp_path>
 $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<platform>
 ```
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401101235.png)
+![20210401101235](./documents/imgs/20210401101235.png)
 
 <center><font size=2 color="gray">使用默认模型和默认目标平台工作</font></center>
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401100920.png)
+![20210401100920](./documents/imgs/20210401100920.png)
 
 <center><font size=2 color="gray">指定模型参数和目标平台插件</font></center>
 
@@ -127,7 +127,7 @@ $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<p
 
 示例中选择的是 `scons` 编译 (在这里默认你已经配置好了 `RT-Thread` 的 [env](https://www.rt-thread.org/document/site/#) 环境，并且会使用 `scons -j 6` 编译)
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210331171829.png)
+![20210331171829](./documents/imgs/20210331171829.png)
 
 <center><font size=2 color="gray">scons 编译成功界面</font></center>
 
@@ -144,16 +144,16 @@ $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<p
 >
 > 对第四步操作有困惑的同学请看👇项目实战部分，有完完整整的步骤和说明
 
-## 其他 - 使用第三方目标平台项目实战
+## 其他-使用第三方目标平台项目实战
 
-| 配置           | 说明                                             |
-| -------------- | ------------------------------------------------ |
-| 第三方目标平台 | `STM32`                                          |
-| 项目工程       | `ART-PI BSP`                                     |
-| 神经网络模型   | `rt_ai_tools/Model/keras_mnist.h5`               |
-| 项目实战手册   | [RT-AK 快速上手.md](documents/RT-AK 快速上手.md) |
+| 配置           | 说明                                           |
+| -------------- | ---------------------------------------------- |
+| 第三方目标平台 | `STM32`                                        |
+| 项目工程       | `ART-PI BSP`                                   |
+| 神经网络模型   | `rt_ai_tools/Model/keras_mnist.h5`             |
+| 项目实战手册   | [RT-AK快速上手.md](documents/RT-AK快速上手.md) |
 
-# 4. 未来将完善
+# 未来将完善
 
 - [ ] Windows 7 支持
 - [ ] Linux 支持

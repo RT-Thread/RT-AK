@@ -1,13 +1,13 @@
 ### 目录
 
-- [1. RT-AK](#1.RT-AK)
-- [2. 持续构建](#2.持续构建)
+- [1. RT-AK](#RT-AK-简介)
+- [2. 持续构建](#持续构建)
   - [官方版本](#官方版本)
   - [社区构建](#社区构建)
-- [3. 获得帮助](#3.获得帮助)
-- [4. 附加文件](#4.附加文件)
+- [3. 获得帮助](#获得帮助)
+- [4. 开发者资料](#开发者资料)
 
-# 1. RT-AK 简介
+# RT-AK 简介
 
 - `RT-AK`: `RT-Thread AI Toolkit`，RT-Thread AI 套件。
 
@@ -19,13 +19,13 @@
 $ python aitools.py --model xxx...
 ```
 
-要进一步了解如何使用框架，请查阅 [./RTAK/README.md](./RTAK/README.md) 中的演示示例部分。
+要进一步了解如何使用框架，请查阅 [./RT-AK/README.md](./RT-AK/README.md) 中的演示示例部分。
 
 ---
 
 **我们致力于降低嵌入式 AI 落地的难度和门槛**
 
-# 2. 持续构建
+# 持续构建
 
 ## 官方版本
 
@@ -39,9 +39,9 @@ $ python aitools.py --model xxx...
 | ---------- | ------ | --------- |
 |            |        |           |
 
-# 3. 获得帮助
+# 获得帮助
 
-- [RT-AK 常见问题解答](./RTAK/documents/RT-AK 常见问题解答.md)
+- [RT-AK常见问题解答](./RT-AK/documents/RT-AK常见问题解答.md)
 
 - [RT-Thread 社区论坛](https://club.rt-thread.org/)
 
@@ -49,18 +49,18 @@ $ python aitools.py --model xxx...
 
 - 公众号： `RTThread 物联网操作系统`
 
-  <img src="https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210114105417.png" style="zoom:50%;" />
+  <img src="./RT-AK/documents/imgs/20210114105417.png" style="zoom:50%;" />
   
 - 商业合作：平台支持、AI 解决方案定制等请联系 business@rt-thread.com
 
-# 4. 开发者资料
+# 开发者资料
 
-对项目内部细节感兴趣的开发人员，在 [RTAK/documents](RTAK/documents) 文件夹中有更多技术文档，欢迎贡献文档、示例工程及平台支持包(独立仓库)
+对项目内部细节感兴趣的开发人员，在 [RT-AK/documents](RT-AK/documents) 文件夹中有更多技术文档，欢迎贡献文档、示例工程及平台支持包(独立仓库)
 
-- [RT-AK 常见问题解答.md](RTAK/documents/RT-AK 常见问题解答.md)
-- [RT-AK 代码贡献手册.md](RTAK/documents/RT-AK 代码贡献手册.md)
-- [RT-AK 开发手册.md](RTAK/documents/RT-AK 开发手册.md)
-- [RT-AK 快速上手.md](RTAK/documents/RT-AK 快速上手.md)
-- [RT-AK 前期知识.md](RT-AK/documents/RT-AK前期知识.md)
+- [RT-AK常见问题解答.md](RT-AK/documents/RT-AK常见问题解答.md)
+- [RT-AK代码贡献手册.md](RT-AK/documents/RT-AK代码贡献手册.md)
+- [RT-AK开发手册.md](RT-AK/documents/RT-AK开发手册.md)
+- [RT-AK快速上手.md](RT-AK/documents/RT-AK快速上手.md)
+- [RT-AK关于模型补充说明.md](RT-AK/documents/RT-AK关于模型补充说明.md)
 
-- [RT-Thread 编程指南.pdf](RTAK/documents/RT-Thread 编程指南.pdf)
+- [RT-Thread编程指南.pdf](RT-AK/documents/RT-Thread编程指南.pdf)

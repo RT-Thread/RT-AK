@@ -1,8 +1,8 @@
-- [0x01 准备工作](# 0x01 准备工作)
-- [0x02 目录结构](# 0x02 目录结构)
-- [0x03 参数说明](# 0x03 参数说明)
-- [0x04 演示示例](# 0x04 演示示例)
-- [0x05 流程 & 功能](# 0x05 流程 & 功能)
+- [0x01 准备工作](#0x01-准备工作)
+- [0x02 目录结构](#0x02-目录结构)
+- [0x03 参数说明](#0x03-参数说明)
+- [0x04 演示示例](#0x04-演示示例)
+- [0x05 流程&功能](#0x05-流程&功能)
 
 # RT-AK Tools
 
@@ -24,7 +24,7 @@
 
 - How to use RT-AK Tools? The key file is aitools.py
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210331183423.png)
+![20210331183423](./Documents/imgs/20210331183423.png)
 
 # 0x01 准备工作
 
@@ -77,13 +77,13 @@ D:.
 $ python aitools.py --help
 ```
 
-![image-20210409175546872](C:\Users\12813\AppData\Roaming\Typora\typora-user-images\image-20210409175546872.png)
+![20210414173800](./Documents/imgs/20210414173800.png)
 
 # 0x04 演示示例
 
 请查阅：[../README.md](../README.md) 中的第 3 章节 - 演示示例
 
-# 0x05 流程 & 功能
+# 0x05 流程&功能
 
 ## 5.1 RT-AI Tools 内部流程
 

@@ -22,13 +22,14 @@
 |   3   | `STM32 AI` 插件 | `X-CUBE-AI` 下载解压，下文有介绍     |
 |   4   |     `RT-AK`     | `RT-AK` 代码克隆到本地               |
 
-- 下载 `ART-PI BSP` 地址： [ART-PI](http://117.143.63.254:9012/www/RT-AK/sdk-bsp-artpi.zip)
+- 准备 `ART-PI BSP` ，以下二选一
+
+  - RT-Thread Studio 创建 ART-PI [教程](https://art-pi.gitee.io/website/docs/#/development/ART-Pi_%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C)
+  - 我们准备好的下载地址： [ART-PI](http://117.143.63.254:9012/www/RT-AK/sdk-bsp-artpi.zip)
 
 - 下载 `X-CUBE-AI` 
 
-  - 地址，以下二选一：
-
-    [官网](https://www.st.com/zh/embedded-software/x-cube-ai.html)  | [其他](http://117.143.63.254:9012/www/RT-AK/stm32ai-windows-5.2.0.zip)
+  - [下载地址](https://www.st.com/zh/embedded-software/x-cube-ai.html)
 
   - 版本: v5.2.0
 
@@ -79,7 +80,7 @@
 
 请在 `edge-ai/RTAK/tools` 路径下运行该程序。
 
-![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210223145923.png)
+![image-20210412194422222](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210412194423.png)
 
 ```shell
 # 基础运行命令
@@ -89,7 +90,7 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 python aitools.py --project="D:\RT-ThreadStudio\workspace\test" --model="./Models/keras_mnist.h5" --platform=stm32 --ext_tools="D:\Program Files (x86)\stm32ai-windows-5.2.0\windows" --clear
 ```
 
-![image-20210401181247394](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401181248.png)
+![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210414174057.png)
 
 ## 3.2 其他运行参数补充说明
 
@@ -279,7 +280,7 @@ $ scons -j 6
 
 就可以`RT-Thread` 系统上做应用开发啦。
 
-### 示例应用代码提供
+## 示例应用代码提供
 
 我们提供了一份运行模型推理的示例应用代码，可参考 [6. RT-AK MNIST 应用参考示例](# 6. RT-AK MNIST 应用参考示例)，也可直接下载。
 
