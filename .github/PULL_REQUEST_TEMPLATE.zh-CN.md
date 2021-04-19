@@ -2,8 +2,7 @@
 
 [
 
-1. 修复了 readme.md 中目录跳转失效和修正了正确的空格符
-2. [docs/RT-AK之STM32快速上手.md](https://github.com/RT-Thread/RT-AK-plugin-stm32/pull/2/commits/69b487f4267274d7f441980b782bf541d7caa51a#diff-7f6d4fef08abae43789e9d8d2a17b2bcfe385f3169bd9ae3c71215e4e4fff7ac) 中新增了 RT-AK 的仓库链接
+修改描述
 
 ]
 
