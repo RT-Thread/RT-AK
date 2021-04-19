@@ -1,0 +1,45 @@
+name: RT-AK with plugin-stm32 CI
+
+on: [push, pull_request]
+
+jobs:
+  win10_stm32:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: main
+        fetch-depth: 0
+        lfs: true
+        
+    - name: download and run ai_tools.py and compiler
+      env:
+        BSP: $CI_PROJECT_DIR/RT-AK/tmp/sdk-bsp-artpi
+        EXT_TOOLS: $CI_PROJECT_DIR/RT-AK/tmp/windows
+        RTT_EXEC_PATH: $CI_PROJECT_DIR/RT-AK/tmp/mingw/bin
+        CPUS: 6
+      run:
+        - echo $BSP
+        - pwd
+        - ls
+        - mkdir test
+        - ls
+        # # test
+        # - pip install wget scons
+        # - scons -v
+        # - cd $CI_PROJECT_DIR/RT-AK/test
+        # - python download_file.py
+        # - python -c "import os; print(os.getenv('BSP')); print(os.path.exists(os.getenv('BSP')))"
+        # - ls $CI_PROJECT_DIR/RT-AK/tmp
+        # # run rt_ai_tools
+        # - cd $CI_PROJECT_DIR/RT-AK/rt_ai_tools
+        # - python aitools.py --project=$BSP --model='./Models/keras_mnist.h5' --platform='stm32' --ext_tools=$EXT_TOOLS --clear
+        # - echo "Run RT-AK Tools done."
+        # # compiler
+        # - cd $BSP
+        # - scons -j $CPUS
+        # - echo "Compiler done."
+    
+    
+    
