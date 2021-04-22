@@ -9,7 +9,7 @@
 
 # RT-AK 简介
 
-- `RT-AK`: `RT-Thread AI Toolkit`，RT-Thread AI 套件。
+- `RT-AK`: `RT-Thread AI Kit`，RT-Thread AI 套件。
 
 `RT-AK` 是 `RT-Thread` 团队为 `RT-Thread` 实时操作系统所开发的 `AI` 套件，能够一键将 `AI` 模型部署到 RT-Thread 项目中，让用户可以 在统一的 API 之上进行业务代码开发，又能在目标平台上获极致优化的性能，从而更简单方便地开发端侧 AI 应用程序。
 
