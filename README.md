@@ -60,7 +60,7 @@ $ python aitools.py --model xxx...
 - [RT-AK常见问题解答.md](RT-AK/documents/RT-AK常见问题解答.md)
 - [RT-AK代码贡献手册.md](RT-AK/documents/RT-AK代码贡献手册.md)
 - [RT-AK开发手册.md](RT-AK/documents/RT-AK开发手册.md)
-- [RT-AK快速上手.md](RT-AK/documents/RT-AK快速上手.md) | [Engilish](RT-AK/documents/RT-AK Quick Start.md)
+- [RT-AK快速上手.md](RT-AK/documents/RT-AK快速上手.md) | [English](RT-AK/documents/RT-AK%20Quick%20Start.md)
 - [RT-AK关于模型补充说明.md](RT-AK/documents/RT-AK关于模型补充说明.md)
 
 - [RT-Thread编程指南.pdf](RT-AK/documents/RT-Thread编程指南.pdf)
