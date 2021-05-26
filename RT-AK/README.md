@@ -10,6 +10,10 @@
   - [其他 - 项目实战](#其他-使用第三方目标平台项目实战)
 - [4. 未来将完善](#未来将完善)
 
+**Update 2021/05/26**
+
+- add Engilish  [RT-AK Quick Start](documents/RT-AK Quick Start.md)
+
 # 简介
 
 `RT-AK` 是 `RT-Thread` 团队对 `RT-Thread` 系统所开发的 `AI` 套件，一键将 `AI` 模型部署到 `RT-Thread` 系统中，让用户可以更简单方便的开发自己的应用程序。
