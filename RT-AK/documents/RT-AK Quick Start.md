@@ -6,7 +6,8 @@
 
 With the `RT-AK` support, taking one line of command of `python aitools.py --model xxx...` can deploy the `AI` model to the `RT-Thread` embedded system:
 
-Commands List: [How to run aitools.py](# step1 Run `rt_ai_tools/aitools.py`)
+Commands List: [How to run aitools.py](#step1-run-rt_ai_toolsaitoolspy)
+
 GitHub Repository: https://github.com/RT-Thread/RT-AK
 
 ---
@@ -83,7 +84,7 @@ Internal detailed processes please refer to the source code or the `readme` docu
 
 Enter `edge-ai/RTAK/tools` path, run `aitools.py`
 
-![image-20210412194422222](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210412194423.png)
+![image-20210528112918056](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210528112956.png)
 
 ```shell
 # Run Command
