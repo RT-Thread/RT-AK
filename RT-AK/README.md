@@ -12,7 +12,7 @@
 
 **Update 2021/05/26**
 
-- add Engilish  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start.md)
+- add English  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start.md)
 
 # 简介
 
