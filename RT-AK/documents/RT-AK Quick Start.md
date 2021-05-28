@@ -41,14 +41,17 @@ Required Documents:
 ![image-20210525153037964](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210525153039.png)
 
 <center><font size=2 color="gray">X-CUBE-AI</font></center>
+
 ![image-20210525153057003](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210525153058.png)
 
-<center><font size=2 color="gray">下载界面</font></center>
+<center><font size=2 color="gray">Download</font></center>
+
 ## 1.2 X-CUBE-AI Decompress
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20201210165303.png)
 
 <center><font size=2 color="gray">Downloaded File Folder</font></center>
+
 Includes: 
 
 - `stm32ai-windows-5.2.0.zip` has stored the `X-CUBE-AI` model conversion software: `stm32ai`. This file is required. 
@@ -62,7 +65,8 @@ Keep in mind about this path. HIGH ATTENTION!
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401162400.png)
 
-<center><font size=2 color="gray">STM32: X-CUBE-AI 解压路径</font></center>
+<center><font size=2 color="gray">STM32: X-CUBE-AI unzip path</font></center>
+
 ## 1.3 ART-PI BSP
 
 1.  Open [RT-Thread Studio](https://www.rt-thread.io/studio.html)
@@ -72,6 +76,7 @@ Keep in mind about this path. HIGH ATTENTION!
 <img src="https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210524181008.png" style="zoom:80%;" />
 
 <center><font size=2 color="gray">Create ART-PI Project in RT-Thread Studio</font></center>
+
 # 2. Execute
 
 ## Step1 Run `rt_ai_tools/aitools.py`
