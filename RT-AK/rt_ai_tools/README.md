@@ -18,7 +18,6 @@
 > # 默认是 rt_ai_tools/Model/keras_mnist.h5
 > $ python model_info.py --model=<your_model_path>
 > ```
->
 
 - What is RT-AK Tools?
 
@@ -61,6 +60,11 @@ D:.
 | `test`      | `RT-AK Tools` 测试用例，使用的是 `Pytest-bdd` 测试框架 |
 
 # 0x03 参数说明
+
+RT-AK 中的参数包含了两部分，
+
+- 基础参数（就是下面这个参数部分）
+- 插件参数（在各个插件的仓库里可见，此处不可见）
 
 | Parameter             | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
