@@ -114,7 +114,9 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 
 ## 2.3 运行参数详细说明
 
-- 主函数参数部分
+RT-AK 中的参数包含了两部分，基础参数 + 插件参数
+
+- 基础参数部分
 
 | Parameter             | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
