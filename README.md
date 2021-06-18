@@ -9,11 +9,13 @@
 
 # RT-AK 简介
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![](https://img.shields.io/badge/Plugin-STM32-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-stm32) [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210)
+
 - `RT-AK`: `RT-Thread AI Kit`，RT-Thread AI 套件。
 
-`RT-AK` 是 `RT-Thread` 团队为 `RT-Thread` 实时操作系统所开发的 `AI` 套件，能够一键将 `AI` 模型部署到 RT-Thread 项目中，让用户可以 在统一的 API 之上进行业务代码开发，又能在目标平台上获极致优化的性能，从而更简单方便地开发端侧 AI 应用程序。
+`RT-AK` 是 `RT-Thread` 团队为 `RT-Thread` 实时操作系统所开发的 `AI` 套件，能够将 `AI` 模型**一键部署**到 `RT-Thread` 项目中，让用户可以在统一的 `API` 之上进行业务代码开发，又能在目标平台上获极致优化的性能，从而更简单方便地开发端侧 AI 应用程序。
 
-在 RT-AK 支持下，仅需要一行命令，即可将 AI 模型部署到 RT-Thread 系统中：
+在 `RT-AK` 支持下，仅需要一行命令，即可将 `AI` 模型部署到 `RT-Thread` 系统中：
 
 ```bash
 $ python aitools.py --model xxx...
@@ -29,9 +31,21 @@ $ python aitools.py --model xxx...
 
 ## 官方版本
 
-| Build Type | Status                                                       | Artifacts |
-| ---------- | ------------------------------------------------------------ | --------- |
-| Windows 10 | ![](https://img.shields.io/badge/RT--AK-passing-blackgreen.svg) |           |
+`RT-AK` 运行环境支持：
+
+| Build Type   | Status                                                       | Artifacts |
+| ------------ | ------------------------------------------------------------ | --------- |
+| Windows 10   | ![](https://img.shields.io/badge/RT--AK-passing-blackgreen.svg) |           |
+| Ubuntu 18.04 | ![](https://img.shields.io/badge/RT--AK-passing-blackgreen.svg) |           |
+| Mac          | -                                                            |           |
+
+`RT-AK` 之插件支持：
+
+| Build Type | Status                                                       | Artifacts                                                    |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| STM32      | [![](https://img.shields.io/badge/Plugin-STM32-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-stm32) | [RT-AK 之 STM32 插件快速上手文档](./RT-AK/documents/RT-AK%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md) |
+| K210       | [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210) | [RT-AK之K210插件快速上手文档](https://github.com/RT-Thread/RT-AK-plugin-k210/blob/main/docs/RT-AK之K210插件快速上手.md) |
+| -          | -                                                            | -                                                            |
 
 ## 社区构建
 
