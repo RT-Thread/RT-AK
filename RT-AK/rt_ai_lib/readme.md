@@ -1,12 +1,12 @@
-# RT-AK README
+# RT-AK LIB README
 
 [TOC]
 
 # 简介
 
-此工程目录为RTAK框架运行库，提供相应源码结构以及文档供开发者参考使用。
+此工程目录为RT-AK框架运行库，提供相应源码结构以及文档供开发者参考使用。
 
-# RTAK 运行库结构图
+# RT-AK 运行库结构图
 
 使用面向对象思想, 采用子类继承方式屏蔽不同平台差异.
 
@@ -34,15 +34,15 @@
 
 **@file: rt_ai_def.h**
 
-rtak中所使用的类型及通用宏定义
+RT-AK中所使用的类型及通用宏定义
 
 **@file: rt_ai_common.h/c**
 
-rtak运行时常用宏及工具定义
+RT-AK运行时常用宏及工具定义
 
 **@file: rt_ai_core.c/h**
 
-RTAK基本结构体, 框架中主要结构体都继承至此结构体, 进行链表集中管理.
+RT-AK基本结构体, 框架中主要结构体都继承至此结构体, 进行链表集中管理.
 
 **@file: rt_ai_runtime.h/c**
 
@@ -54,7 +54,7 @@ log&debug工具
 
 **@file: rt_ai.h/c**
 
-RTAK主要接口，以及api声明，使用RTAK开发应用程序时，需包含此头文件
+RT-AK主要接口，以及api声明，使用RT-AK开发应用程序时，需包含此头文件
 
 **@file: backend_xxx.h/c**
 
@@ -64,7 +64,7 @@ RTAK主要接口，以及api声明，使用RTAK开发应用程序时，需包含
 
 ### 宏命名规则:
 
-RTAK模型信息宏声明使用**RT_AI_name**前缀, 其中**name**为模型名,n为索引数字, platform-name为平台标识名; 
+RT-AK模型信息宏声明使用**RT_AI_name**前缀, 其中**name**为模型名,n为索引数字, platform-name为平台标识名; 
 
 *@file: rt_ai_xxx_model.h*
 
@@ -100,7 +100,7 @@ RTAK模型信息宏声明使用**RT_AI_name**前缀, 其中**name**为模型名,
 
 **RT_AI\_name_INFO** :模型信息初始化声明
 
-**RT_AI\_name_HANDLE** : RTAK句柄初始化声明
+**RT_AI\_name_HANDLE** : RT-AK句柄初始化声明
 
 **RT_AI\_platform_name** :平台相关结构体初始化声明(预计将在下个迭代更名为RT_AI\_platform\_name)
 
@@ -171,7 +171,7 @@ static int rt_ai_mnist_model_init(){
 INIT_APP_EXPORT(rt_ai_mnist_model_init);
 ```
 
-# RTAK 组件&API:
+# RT-AK 组件&API:
 
 `rt_err_t rt_ai_register(rt_ai_t ai, const char *name, rt_uint16_t flags,int (*call)(void *arg), void *arg);`
 
@@ -269,7 +269,7 @@ rt_err_t  rt_ai_config(rt_ai_t ai, rt_uint32_t cmd, void *args);`
 
 **描述** : 运行参数相关配置, 具有平台相关性. 相关命令定义在backend_xxx.h
 
-## RTAK 组件
+## RT-AK 组件
 
 框架使用面向对象思想进行设计，框架中大多数结构体都集成自基础对象，并由框架核心部分进行链表方式管理。
 
@@ -372,7 +372,7 @@ struct rt_ai
 };
 ```
 
-RTAK主要句柄, 保存着模型信息, 运行接口等所有运行时信息与环境. 使用`rt_ai_register()`将模型句柄注册到模型链表中, 使用`rt_ai_find()`查询句柄链表, 并返回句柄的地址. 对于不同平台进行适配时, 应设计子类继承自此结构体.
+RT-AK主要句柄, 保存着模型信息, 运行接口等所有运行时信息与环境. 使用`rt_ai_register()`将模型句柄注册到模型链表中, 使用`rt_ai_find()`查询句柄链表, 并返回句柄的地址. 对于不同平台进行适配时, 应设计子类继承自此结构体.
 
 ### 记录: rt_ai_record
 
@@ -386,7 +386,6 @@ struct rt_ai_record
 ```
 
 成员record为记录变量, 用于保存需要保存的状态信息, 如时间, 当前当前运行的句柄等. 使用`rt_ai_record_create()`可以创建一个rt_ai_record变量, 并自动挂载到record链表中进行管理. `rt_ai_record_find()`用于查找一个已经挂载到链表中的rt_ai_record变量,
-
 
 
 
