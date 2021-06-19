@@ -76,7 +76,7 @@
 
 内部的流程请看源码或者 `plugin_stm32` 仓库下的 `readme` 文档
 
-## 3.1 基础运行命令
+## 2.1 基础运行命令
 
 请在 `edge-ai/RTAK/tools` 路径下运行该程序。
 
@@ -92,7 +92,7 @@ python aitools.py --project="D:\RT-ThreadStudio\workspace\test" --model="./Model
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210414174057.png)
 
-## 3.2 其他运行参数补充说明
+## 2.2 其他运行参数补充说明
 
 ```shell
 # 指定转换模型的名称，--model_name 默认为 network
@@ -112,9 +112,11 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 python aitools.py --project=<your_project_path> --model=<your_model_path> --platform=stm32 --ext_tools=<your_x-cube-ai_path> --c_model_name=<new_model_name>
 ```
 
-## 3.3 运行参数详细说明
+## 2.3 运行参数详细说明
 
-- 主函数参数部分
+RT-AK 中的参数包含了两部分，基础参数 + 插件参数
+
+- 基础参数部分
 
 | Parameter             | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
@@ -143,7 +145,7 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 | **--enable_rt_lib** | **在 `project/rtconfgi.h` 中打开宏定义，默认是 `RT_AI_USE_CUBE`** |
 | --clear              | 是否需要删除 `stm32ai` 生成的中间文件夹 `stm_out` ，默认为`False` |
 
-# 4.编译
+# 3.编译
 
 以下任意选择一个即可
 
@@ -152,7 +154,7 @@ python aitools.py --project=<your_project_path> --model=<your_model_path> --plat
 - 基于 `RT-Thread Env` 的 `Scons`
 - `Scons`
 
-## 4.1 MDK Keil 编译
+## 3.1 MDK Keil 编译
 
 - [Env 工具](https://www.rt-thread.org/document/site/#)
 
@@ -168,7 +170,7 @@ $ scons --target=mdk5
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401192909.png)
 
-## 4.2 RT-Thread Studio 编译
+## 3.2 RT-Thread Studio 编译
 
 > 运行该章节的前提是：
 >
@@ -180,7 +182,7 @@ $ scons --target=mdk5
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401193458.png)
 
-## 4.2 Env Scons 编译
+## 3.3 Env Scons 编译
 
 - [Env 工具](https://www.rt-thread.org/document/site/#)
 
@@ -196,7 +198,7 @@ $ scons -j 6
 
 ![](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210401182746.png)
 
-## 4.2 Scons 独自编译
+## 3.4 Scons 独自编译
 
 1. 获取编译工具链
 
@@ -255,7 +257,7 @@ $ scons -j 6
 - 如果之前有安装过 `utils-core`，需要先卸载 `pip uninstall utils-core`
 - 如果想要继续使用 `RT-Thread Env` 开发的，需要先删除 `<project>/.sconsign.dblite`
 
-# 5. 烧录
+# 4. 烧录
 
 - [x] `MDK Keil`
 
@@ -282,7 +284,7 @@ $ scons -j 6
 
 ## 示例应用代码提供
 
-我们提供了一份运行模型推理的示例应用代码，可参考 [6. RT-AK MNIST 应用参考示例](# 6. RT-AK MNIST 应用参考示例)，也可直接下载。
+我们提供了一份运行模型推理的示例应用代码，可参考 [5. RT-AK MNIST 应用参考示例](# 5. RT-AK MNIST 应用参考示例)，也可直接下载。
 
 - [mnist_app.c](http://117.143.63.254:9012/www/RT-AK/mnist_app.zip)：
 
@@ -303,7 +305,7 @@ $ scons -j 6
 
 完整的示例工程：https://github.com/EdgeAIWithRTT/Project3-Mnist_Cube_RTT/tree/master/Mnist_RTT
 
-# 6. RT-AK MNIST 应用参考示例
+# 5. RT-AK MNIST 应用参考示例
 
 ```c
 #include <rt_ai_mnist_model.h>
