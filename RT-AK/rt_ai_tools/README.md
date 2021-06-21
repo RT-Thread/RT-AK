@@ -1,8 +1,7 @@
-- [0x01 准备工作](#0x01-准备工作)
-- [0x02 目录结构](#0x02-目录结构)
-- [0x03 参数说明](#0x03-参数说明)
-- [0x04 演示示例](#0x04-演示示例)
-- [0x05 流程&功能](#0x05-流程&功能)
+- [1. 目录结构](#1.-目录结构)
+- [2. RT-AK Tools 使用说明](#2.-RT-AK-Tools-使用说明)
+- [3. RT-AK Tools 参数](#3.-RT-AK-Tools-参数)
+- [4. RT-AK Tools 内部代码逻辑](#4.-RT-AK-Tools-内部代码逻辑)
 
 # RT-AK Tools
 
@@ -19,20 +18,16 @@
 > $ python model_info.py --model=<your_model_path>
 > ```
 
-- What is RT-AK Tools?
+`RT-AK Tools` 是 `RT-AK` 在上位机上的主要运行代码，用一行命令实现 `AI` 模型部署到嵌入式设备中，
 
-- How to use RT-AK Tools? The key file is aitools.py
+请注意，此时不包含嵌入式设备端的 AI 模型推理代码，该部分代码需要用户自行编写，或者参考我们的案例代码
+
 
 ![20210331183423](./Documents/imgs/20210331183423.png)
 
-# 0x01 准备工作
+<center><font size=2 color="gray">RT-AK Tools 的工作流程</font></center>
 
-- Windows 10
-- Python >= 3.7
-- BSP
-- AI Model
-
-# 0x02 目录结构
+## 1. 目录结构
 
 ```bash
 D:\Project\edge-ai\RT-AK\rt_ai_tools>tree /a
@@ -43,7 +38,7 @@ D:.
 +---Model
 +---platforms
 |   +---example
-|   +---k210  # 未开源，模型支持: TFLite | Caffe | ONNX
+|   +---k210  # 模型支持: TFLite | Caffe | ONNX
 |   \---stm32  # 模型支持: Keras | TFLite | Caffe | ONNX
 +---test
 |   +---data
@@ -59,9 +54,21 @@ D:.
 | `platforms` | 第三方目标平台插件，比如：`STM32`， `K210`             |
 | `test`      | `RT-AK Tools` 测试用例，使用的是 `Pytest-bdd` 测试框架 |
 
-# 0x03 参数说明
+## 2. RT-AK Tools 使用说明
 
-RT-AK 中的参数包含了两部分，
+- 与目标平台无关
+
+  演示示例，请查阅：[演示示例](https://github.com/RT-Thread/RT-AK/tree/main/RT-AK#3-%E6%BC%94%E7%A4%BA%E7%A4%BA%E4%BE%8B)
+
+- 与目标平台相关
+
+  请查阅对应的目标平台插件仓库的 readme 文档，里面有详细说明。
+
+  比如：[RT-AK-plugin-stm32](https://github.com/RT-Thread/RT-AK-plugin-stm32)
+
+## 3. RT-AK Tools 参数
+
+`RT-AK Tools` 参数部分主要有两部分组成：
 
 - 基础参数（就是下面这个参数部分）
 - 插件参数（在各个插件的仓库里可见，此处不可见）
@@ -83,23 +90,15 @@ $ python aitools.py --help
 
 ![20210414173800](./Documents/imgs/20210414173800.png)
 
-# 0x04 演示示例
+## 4. RT-AK Tools 内部代码逻辑
 
-请查阅：[../README.md](../README.md) 中的第 3 章节 - 演示示例
-
-# 0x05 流程&功能
-
-## 5.1 RT-AI Tools 内部流程
-
-1. 加载基础参数
-2. 设置 `logging` 等级
-3. 克隆/拉取最新第三方目标平台插件仓库
-4. 加载插件参数
-5. 执行插件相关工作
-6. 打开 `RT-AK Lib` 中插件的的适配层
-7. 复制 `RT-AK Lib` 到项目工程中
-
-## 5.2  RT-AI Tools 内部功能函数
+- 加载基础参数
+- 设置 `logging` 等级
+- 克隆/拉取最新第三方目标平台插件代码
+- 加载插件参数
+- 执行插件相关工作
+- 打开 `RT-AK Lib` 中插件的的适配层
+- 复制 `RT-AK Lib` 到项目工程中
 
 | Index | Function                    | Description                                                  |
 | :---: | --------------------------- | ------------------------------------------------------------ |
@@ -108,3 +107,4 @@ $ python aitools.py --help
 |   3   | Plugin.run_plugin()         | 运行指定目标平台插件，比如模型转换。如果有相关库依赖，将相关库复制到 `project` 路径下 |
 |   4   | enable_platform()           | 开启 `RT-AK Lib` 中目标平台相关库支持，如果已经开启过某个平台，先关闭后打开新的目标平台插件相关库 |
 |   5   | load_rt_ai_lib()            | 复制 `RT-AK Lib` 到项目工程中，如果已经存在，则先删除后复制  |
+

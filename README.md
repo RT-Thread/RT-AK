@@ -47,6 +47,8 @@ $ python aitools.py --model xxx...
 | K210       | [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210) | [RT-AK之K210插件快速上手文档](https://github.com/RT-Thread/RT-AK-plugin-k210/blob/main/docs/RT-AK之K210插件快速上手.md) |
 | -          | -                                                            | -                                                            |
 
+其中 `STM32` 插件未提供量化功能，`K210` 有提供量化功能，详细请看文档说明
+
 ## 社区构建
 
 | Build Type | Status | Artifacts |

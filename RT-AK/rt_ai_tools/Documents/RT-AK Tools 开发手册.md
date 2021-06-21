@@ -1,16 +1,16 @@
 <center><h1>RT-AK Tools 开发手册</h1></center>
 
-- [简介](#简介)
-- [如何下载 RT-AK Tools](#如何下载-RT-AK-Tools)
-- [RT-AK Tools 架构](#RT-AK-Tools-架构)
-  - [1. 开发背景](#1.-开发背景)
-  - [2. 功能实现](#2.-功能实现)
-  - [3. 拓展插件代码贡献](#3.-拓展插件代码贡献)
-- [拓展第三方目标平台插件](#拓展第三方目标平台插件)
-- [RT-AK Tools 代码贡献标准](#RT-AK-Tools-代码贡献标准)
+- [1. 简介](#1.-简介)
+- [2. 如何下载 RT-AK Tools](#2.-如何下载-RT-AK-Tools)
+- [3. RT-AK Tools 架构](#3.-RT-AK-Tools-架构)
+- [4. 拓展第三方目标平台插件](#4.-拓展第三方目标平台插件)
+  - [4.1 开发背景](#4.1-开发背景)
+  - [4.2 功能实现](#4.2-功能实现)
+  - [4.3 插件开发规范](#4.3-插件开发规范)
+- [5. RT-AK Tools 代码贡献标准](#5.-RT-AK-Tools-代码贡献标准)
   - [审核阶段](#审核阶段)
 
-## 简介
+## 1. 简介
 
 本文将详细介绍 `RT-AK Tools` 开发流程，让用户掌握如何使用 `RT-AK Tools` 进行应用开发，包括但不局限于以下内容：
 
@@ -19,23 +19,20 @@
 - 拓展第三方目标平台插件
 - `RT-AK Tools` 代码贡献标准
 
-## 如何下载 RT-AK Tools
+## 2. 如何下载 RT-AK Tools
 
 当你在克隆主项目的时候，`RT-AK Tools` 会随之克隆到本地。
 
-相关插件仓库地址在 `platforms/support_platforms.json` 文件中；
+与目标平台相关的**插件**代码：
 
-相关插件代码在 `./RTAK/rt_ai_tools/platforms` 路径下。
+- 相关插件仓库地址在 `platforms/support_platforms.json` 文件中
+  - 该路径存放的就是第三方目标平台插件和示例插件模板。
 
-该路径存放的就是第三方目标平台插件和示例插件模板。
+- 相关插件代码在 `./RTAK/rt_ai_tools/platforms` 路径下
+  - 最开始的时候，该路径下面仅有一个 `plugin_example` 示例插件代码模板
+  - 当用户运行一次 RT-AK Tools 之后（指定目标平台），代码会自动从对应的插件仓库地址拉取最新的插件项目代码
 
-其中，`plugin_examples` 是示例插件模板。
-
-`k210` 和 `stm32` 分别是 `RT-AK Tools` 所拓展的 `k210 kpu` 和 `stm32`  支持插件。
-
-- **k210 尚未开源**
-
-##　RT-AK Tools 架构
+##　3. RT-AK Tools 架构
 
 ![待更新](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210402101940.png)
 
@@ -43,46 +40,78 @@
 
 *其中红色字体部分是待开发功能*
 
-重要的两个组成部分:
+**重要的两个组成部分:**
 
-1. 模型转成 `RT-AK` 所支持的格式文件
-2. 复制 `RT_AK Lib` 到 `BSP` 项目工程中, 如果有静态库依赖, 一并复制
+- `aitools`（上图中的上部分红色框框）
 
-## 拓展第三方目标平台插件
+  与目标平台无关，完成以下工作：
 
-### 1. 开发背景
+  1. 根据用户输入的参数选择对应的目标平台
+  2. 从目标平台插件仓库拉取插件代码，拉取的代码位于 `./RTAK/rt_ai_tools/platforms` 路径下
+  3. 复制 `RT_AK Lib` 到 `BSP` 项目工程中, 如果有静态库依赖, 一并复制
 
-- Python 开发环境, 版本 >= 3.7
-- 存在第三方目标平台推理库, 比如 `STM32` 的 `X-CUBE-AI`
+- 平台插件（上图中的下部分红色框框）
 
-### 2. 功能实现
+  与目标平台相关，完成以下工作：
 
-以下功能均用 `python` 脚本实现
+  1. 对用户输入的参数进行解析，此时的参数包含基础参数和目标平台插件参数
+  2. 自检
+  3. 在 `<BSP>/rtconfig.h` 中使能目标平台的控制宏，比如：`#define RT_AI_USE_CUBE`
+  4. 将 `AI` 模型转换为目标平台所支持的格式，且复制到 `BSP `中，目前使用的 AI 模型转换工具均为原厂所提供
+  5. 生成 AI 模型信息和与目标平台信息相关的模型声明文件，分别是：
+     - `rt_ai_<model_name>_model.h`
+     - `rt_ai_<model_name>_model.c`
 
-- [ ] 插件模型转换, 比如 `STM32` 将 `Keras` 模型 转成 `c-model`
-- [ ] 将转换后的模型复制到  `BSP` 项目工程中
-- [ ] 如果存在第三方静态库依赖, 同样复制到  `BSP` 项目工程中
-- [ ] 生成 `rt_ai_<model_name>_model.h` 文件, 包含模型的相关信息, 可参考 [RT-AK 快速上手.md](../../documents/RT-AK 快速上手.md)
-- [ ] 生成 `rt_ai_<model_name>_model.c` 文件, 将模型的相关信息注册到 `RT-AK Lib` 后端, 可参考 [RT-AK 快速上手.md](../../documents/RT-AK 快速上手.md)
+## 4. 拓展第三方目标平台插件
+
+### 4.1 开发背景
+
+- `Python >= 3.7`
+- `Windows 10` 或者 `Ubuntu 18.04`
+- 目标平台已有 `AI` 模型转换工具和推理库
+
+### 4.2 功能需求
+
+需要研发 `RT-AK Tools` 和 `RT-AK Lib` 对应的插件代码
+
+**RT-AK Tools 对应的工具插件代码功能列表：**
+
+- `AI` 模型转换成目标平台支持的模型格式
+
+- 将转换成功的 `AI` 模型复制到  `BSP` 项目中
+  - 如果目标平台存在第三方静态库依赖，同样复制到  `BSP` 项目工程中
+
+- 生成 `rt_ai_<model_name>_model.h` 文件
+  - AI 模型的相关信息
+  - 保存到 `<BSP>/applications` 路径下
+
+- 生成 `rt_ai_<model_name>_model.c` 文件,
+  - 与目标平台信息相关的模型声明文件
+  - 保存到 `<BSP>/applications` 路径下
+
+**RT-AK Lib 对应的库插件：**
+
+-  适配 `RT-AK Lib` 与目标平台的后端代码
 
 ---
 
-注意在 `rt_ai_tools/platforms/<platform>`  文件夹下有一个 `backend_<platform>` 文件夹，里面存放的对接目标平台和 `RT-AK Lib` 的适配代码。详细开发规范请阅读 `RT-AK Lib` 中的 `README` 文档。
+可参考 STM32 插件: [Github](https://github.com/RT-Thread/RT-AK-plugin-stm32)
 
-### 3. 拓展插件代码贡献
+### 4.3 插件开发规范
 
-| 推理库插件            | 格式                                                         | 备注                                                         |
+| 插件                  | 格式                                                         | 备注                                                         |
 | --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 拓展代码位于          | 在 `rt_ai_tools/platforms` 路径下新建一个 `plugin_<platform>` 的 `git` 空仓 | RT-AK Tools 和 Lib 开发代码应位于该 `plugin_<platform>` 目录下 |
-| 命名                  | 统一命名为 `plugin_<platform>`，例如 `plugin_example`        |                                                              |
-| 插件所需参数          | 在`platforms/<platform>` 下创建 `<platform>_parser.py`       | 其中, `--enable_rt_lib` 参数必须指定, 命名: `RT_AI_<platform>` |
-| 插件运行代码          | 1. 在`rt_ai_tools/platforms/<platform>` 下创建 `<platform>.py` <br>2. 在 `<platform>.py` 文件中创建 `Pluging` 类<br>3. 在 `Pluging` 类中创建 `run_plugin` 函数 |                                                              |
-| 插件完成开发准备提 PR | 在主项目中 `RT-AK/Document/support_platforms.json` 下新增插件和插件仓库地址 | 管理员审核                                                   |
+| 代码存放              | 在 `rt_ai_tools/platforms` 路径下新建一个 `plugin_<platform>` 的文件夹 | 工具插件开发代码应位于该 `plugin_<platform>` 目录下<br>库插件开发代码应位于该 `plugin_<platform>/backend_plugin_<platform>` 目录下 |
+| 命名                  | 插件统一命名为 `plugin_<platform>`                           | 例如 `plugin_example`，`plugin_stm32` 等                     |
+| 插件参数              | 在`platforms/<platform>` 下创建 `<platform>_parser.py`       | 其中, `--enable_rt_lib` 参数必须指定, 命名: `RT_AI_<platform>` |
+| 插件运行代码开发      | 1. 在`rt_ai_tools/platforms/<platform>` 下创建 `plugin_<platform>.py` <br>2. 在 `plugin_<platform>.py` 文件中创建 `Pluging` 类<br>3. 在 `Pluging` 类中创建 `run_plugin` 函数 |                                                              |
+| 编程语言              | Python                                                       |                                                              |
+| 插件完成开发准备提 PR | 若要将插件项目上传到 `Github`，请及时更新 `platforms/support_platforms.json` | 管理员审核                                                   |
 
 - 尽量避免 `print`, 请使用 `logging`
-- 可参考 `rt_ai_tools/platforms/plugin_examples`
+- 可参考 `rt_ai_tools/platforms/plugin_examples` 或者 STM32 插件 Github](https://github.com/RT-Thread/RT-AK-plugin-stm32)
 
-## RT-AK Tools 代码贡献标准
+## 5. RT-AK Tools 代码贡献标准
 
 1. `Python` 代码规范请满足 [ Google Python风格规范](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/)
 2. 代码设计参考 `plugin_example` ，统一命名格式为 `plugin_<platform>` 
@@ -102,4 +131,9 @@
 
 ----
 
-- [ ] **TO DO LIST:** CI 更新
+**TO DO LIST:** 
+
+- [ ] CI 更新
+- [ ] 量化支持
+- [ ] 测试用例设计
+
