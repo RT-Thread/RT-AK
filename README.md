@@ -47,6 +47,17 @@ $ python aitools.py --model xxx...
 | K210       | [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210) | [RT-AK之K210插件快速上手文档](https://github.com/RT-Thread/RT-AK-plugin-k210/blob/main/docs/RT-AK之K210插件快速上手.md) |
 | -          | -                                                            | -                                                            |
 
+其中 `STM32` 与 `K210` 原厂均有有提供模型优化（量化）操作，
+
+但是在 `RT-AK` 中，仅有 `K210` 插件支持量化操作，`STM32` 插件**尚未集成量化功能**
+
+注意：
+
+- 在使用 `STM32` 插件之前，如需要进行整型计算，需要将模型提前量化好，否则就是用浮点进行计算。
+- 在使用 `K210` 插件之前，神经网络模型必须是原始模型，确保其没有经过量化。如有需要，量化该过程将会在插件内部自动执行。
+
+详细请看文档说明
+
 ## 社区构建
 
 | Build Type | Status | Artifacts |
