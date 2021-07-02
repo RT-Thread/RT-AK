@@ -2,7 +2,7 @@
 
 ## 普通项目开发
 
-> 在以支持的目标平台上进行开发
+> 在已经支持的目标平台上进行开发
 
 1. 了解本项目, 了解已支持的目标平台
 3. 克隆本项目主仓库，
@@ -31,17 +31,17 @@
    - 工具插件：`plugin_<platform>`
    - 库插件：`plugin_<platform>/backend_plugin_<platform>`
 
-   - 若要将插件项目上传到 `Github`，请及时更新 `platforms/support_platforms.json` 中的新增插件和插件仓库地址
+   - 若要将插件项目上传到 `Github`，请及时更新 `platforms/support_platforms.json` 中的新增插件和插件仓库地址，并向主仓库提PR
 
 3. 查看 [RT-AK Tools](https://github.com/RT-Thread/RT-AK/blob/main/RT-AK/rt_ai_tools/Documents/RT-AK%20Tools%20%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C.md) 和 [RT-AK Lib](https://github.com/RT-Thread/RT-AK/blob/main/RT-AK/rt_ai_lib/readme.md) 开发手册，内含插件开发，阅读部分源码
 
 4. 设计 `RT-AK` 与目标平台的工具插件和库插件
 
-5. 配备相应文档系统测试
+5. 提供配套的测试用例与文档
 
 6. 将插件项目代码上传到 `Github`，在 `RT-AK/Document/support_platforms.json` 下新增插件和插件仓库地址
 
-7. 管理员审核
+7. 提PR，等待管理员审核
 
 ---
 

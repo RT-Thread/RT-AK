@@ -28,12 +28,12 @@
 
 `RT-AK` 的工作基于两部分：
 
-- **`BSP`**，其包含 `RT-Thread` 系统
+- 其中是包含 `RT-Thread` 系统与目标平台 `BSP` 的基础工程
 - **神经网络模型**
 
 当代码顺利执行完成之后后，会自动将 `AI` 模型集成进 `BSP` 。
 
-（Ps: 此时的 `BSP` 不包含任何关于 `AI` 模型推理的应用代码，该部分需要开发者们自行撰写，具体可参考 [RT-AK MNIST 应用参考示例](https://github.com/RT-Thread/RT-AK/blob/main/RT-AK/documents/RT-AK%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md#6-rt-ak-mnist-%E5%BA%94%E7%94%A8%E5%8F%82%E8%80%83%E7%A4%BA%E4%BE%8B)）
+（Ps: 此时的 `BSP` 已经包含模型实现的所有代码，但是还不存在运行模型推理的应用代码，该部分需要开发者们自行撰写，具体可参考 [RT-AK MNIST 应用参考示例](https://github.com/RT-Thread/RT-AK/blob/main/RT-AK/documents/RT-AK%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md#6-rt-ak-mnist-%E5%BA%94%E7%94%A8%E5%8F%82%E8%80%83%E7%A4%BA%E4%BE%8B)）
 
 开发者们可以根据 `RT-AK Lib`  提供的 `API` 进行项目开发。 | [API 链接](./rt_ai_lib/readme.md)
 
@@ -63,7 +63,7 @@
 >
 > - Update:
 >
->   RT-AK **暂无**内建的 **AI 工具和推理库**，现在所使用的是芯片厂商所提供的AI 工具和推理库。
+>   RT-AK **暂未提供**的 **AI 工具和推理库**，现在所使用的是芯片厂商所提供的AI 工具和推理库，以便利用原厂资源，充分发挥硬件性能。
 >
 >   如果所使用的芯片型号想要使用 RT-AK 成功部署 AI 模型，**且无 AI 工具和推理库**，请提 PR 或者与我们联系。business@rt-thread.com
 
@@ -209,7 +209,7 @@ $ python aitools.py --project=<your_bsp_path> --model=<model_path> --platform=<p
 - [x] Linux 支持
 - [ ] Windows 7 支持
 - [ ] Qemu 示例 DEMO
-- [ ] I/O 未对接 device 框架进行标准化
+- [ ] I/O 对接 device 框架进行标准化
 - [ ] 自研 AI 模型转换工具和推理库
 - [ ] 量化支持
 - [ ] 经典算法的效果对比与选择
