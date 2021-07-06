@@ -32,7 +32,7 @@
   - 最开始的时候，该路径下面仅有一个 `plugin_example` 示例插件代码模板
   - 当用户运行一次 RT-AK Tools 之后（指定目标平台），代码会自动从对应的插件仓库地址拉取最新的插件项目代码
 
-##　3. RT-AK Tools 架构
+## 3. RT-AK Tools 架构
 
 ![待更新](https://gitee.com/lebhoryi/PicGoPictureBed/raw/master/img/20210402101940.png)
 
