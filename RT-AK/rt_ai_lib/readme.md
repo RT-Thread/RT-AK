@@ -387,7 +387,11 @@ struct rt_ai_record
 
 成员record为记录变量, 用于保存需要保存的状态信息, 如时间, 当前当前运行的句柄等. 使用`rt_ai_record_create()`可以创建一个rt_ai_record变量, 并自动挂载到record链表中进行管理. `rt_ai_record_find()`用于查找一个已经挂载到链表中的rt_ai_record变量,
 
+# 平台&设备适配
 
+首先欢迎和感谢开发者们向此框架提供适配提交。在此向开发者提供一些适配相关建议：
 
-
+* 定义平台相关的结构体, 结构体包含平台运行所需要的的所有信息和参数等, 通常情况结构体需要继承`struct rt_ai` 
+* 根据`struct rt_ai_info` 以及`struct rt_ai` 成员生成框架运行时所需的模型信息
+* 按照`struct rt_ai` 定义, 提供对接框架接口的适配层实现代码, RT-AK通过调用适配层调用和控制平台.
 
