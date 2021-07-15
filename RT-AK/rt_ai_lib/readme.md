@@ -14,13 +14,23 @@
 
 
 
+# 平台&设备适配
+
+首先欢迎和感谢开发者们向此框架提供适配提交。在此向开发者提供一些适配相关建议和常用方法：
+
+* 定义平台相关的结构体, 结构体包含平台运行所需要的的所有信息和参数等, 通常情况结构体需要继承`struct rt_ai`  .
+* 按照`struct rt_ai` 定义, 提供对接框架接口的适配层实现代码, RT-AK通过调用适配层控制平台, `struct rt_ai` 定义了`init()` `run()` `get_output()` 等接口, 对后端适配代码具体实现的整体结构不做要求, 开发者可灵活进行开发. 关于`struct rt_ai` 参考**RT-AK组件&API节**. 
+* 根据`struct rt_ai_info` 以及`struct rt_ai` 成员生成框架运行时所需的模型信息.  关于`struct rt_ai` 和`struct rt_ai_info`  参考**RT-AK组件&API节**
+
+关于框架文件, API及相关结构体详细说明参考下述说明:
+
 # 文件以及相关宏定义
 
 ## 模型生成文件
 
 其中xxx为模型名
 
-**@file** :rt_ai_xxx_model.c
+**@file** :rt_ai_xxx_model.h
 
 模型信息(如输入输出, 运行时内存等) 信息声明头文件. 模型的主要信息可查看此头文件.
 
@@ -386,8 +396,4 @@ struct rt_ai_record
 ```
 
 成员record为记录变量, 用于保存需要保存的状态信息, 如时间, 当前当前运行的句柄等. 使用`rt_ai_record_create()`可以创建一个rt_ai_record变量, 并自动挂载到record链表中进行管理. `rt_ai_record_find()`用于查找一个已经挂载到链表中的rt_ai_record变量,
-
-
-
-
 
