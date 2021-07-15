@@ -393,5 +393,5 @@ struct rt_ai_record
 
 * 定义平台相关的结构体, 结构体包含平台运行所需要的的所有信息和参数等, 通常情况结构体需要继承`struct rt_ai` 
 * 根据`struct rt_ai_info` 以及`struct rt_ai` 成员生成框架运行时所需的模型信息
-* 按照`struct rt_ai` 定义, 提供对接框架接口的适配层实现代码, RT-AK通过调用适配层调用和控制平台.
+* 按照`struct rt_ai` 定义, 提供对接框架接口的适配层实现代码, RT-AK通过调用适配层控制平台.
 
