@@ -10,6 +10,9 @@
 @ Date:    2020/12/22 20:50
 
 @ Update:  move utils to rt_ai_example
+
+@ Update:  add `--pull_repo_only`
+@ Date:    2021/08/02
 '''
 import argparse
 
@@ -26,8 +29,10 @@ def base_parser():
                         help="RT-Thread develop libiraies")
     parser.add_argument("--model_name", type=str, default="network",
                         help="The convert model name.")
+    parser.add_argument("--pull_repo_only", type=bool, default=False,
+                        help="If true, only git pull plugin platform repository.")
     parser.add_argument("--support_platforms", type=str, default="./platforms/support_platforms.json",
                         help="Support platforms repositorys")
     parser.add_argument("--platform", type=str, default="example",
-                        help="Platform used, eg:stm32, k210, examples")
+                        help="Platform used, eg:stm32, k210, example")
     return parser

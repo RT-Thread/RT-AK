@@ -80,6 +80,7 @@ D:.
 | `--model`             | 神经网络模型文件路径，默认为 `./Models/keras_mnist.h5`       |
 | `--model_name`        | 神经网络模型转换后新的模型名，默认是 `network`               |
 | `--rt_ai_lib`         | `RT-Thread` 官方提供的 `RT-AK Lib` ，默认是 `../rt_ai_lib`   |
+| `--pull_repo_only`    | 判断是否仅拉取 `RT-AK` 所支持的插件仓库，默认是 `Flase`      |
 | `--support_platforms` | 存放 `RT-AK` 支持的第三方目标平台插件，`platform: platform_git_url` 格式，默认是`platforms/support_platforms.json` |
 | `--platform`          | 指定目标平台信息，目前支持：`stm32`、`k210`，默认是 `example`，具体体可用的目标平台由 `platforms/xxx.json` 注册 |
 
@@ -88,7 +89,15 @@ D:.
 $ python aitools.py --help
 ```
 
-![20210414173800](./Documents/imgs/20210414173800.png)
+> update: 2021/08/02
+>
+> author: lebhoryi@gmail.com
+
+新增单独拉取插件仓库的功能：
+
+```shell
+$ python aitools.py --pull_plugin_repo=True --platform=<support_platform>
+```
 
 ## 4. RT-AK Tools 内部代码逻辑
 
