@@ -140,6 +140,11 @@ def main():
     ####################################################################
     install_plugin.git_plugin(opt.support_platforms, platform_using)
 
+    # only pull plugin repo
+    if opt.pull_repo_only:
+        logging.info("All works done...")
+        return
+
 
     ####################################################################
     #
