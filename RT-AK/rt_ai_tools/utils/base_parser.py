@@ -34,5 +34,5 @@ def base_parser():
     parser.add_argument("--support_platforms", type=str, default="./platforms/support_platforms.json",
                         help="Support platforms repositorys")
     parser.add_argument("--platform", type=str, default="example",
-                        help="Platform used, eg:stm32, k210, examples")
+                        help="Platform used, eg:stm32, k210, example")
     return parser
