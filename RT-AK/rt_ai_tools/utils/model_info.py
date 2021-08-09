@@ -1,7 +1,7 @@
 # coding=utf-8
 '''
 @ Summary: show model informations
-@ Update:  
+@ Update:
 
 @ file:    model_info.py
 @ version: 1.0.0
@@ -14,15 +14,15 @@
 @ Date:    2021/03/29
 '''
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
 import argparse
 from pathlib import Path
 from functools import reduce
 from tensorflow.keras.models import load_model
 from tensorflow.python.keras.utils import layer_utils
-
 from keras_flops.flops_calculation import get_flops
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 
 class Model(object):
     def __init__(self, model):
@@ -32,14 +32,11 @@ class Model(object):
 
         self.check_model(self.model)
 
-
     def check_model(self, model):
         assert model.exists(),  FileNotFoundError(f"{model} not found!")
 
-
     def _get_row(self, value: list):
         return "{:20s}: {}".format(*value)
-
 
     def _cal_show_size(self, value):
         if 0 < value < 1024:
@@ -53,7 +50,6 @@ class Model(object):
             value_size_unit = "MiB"
         return value_size_show, value_size_unit
 
-
     def get_value_details(self, values, model_info, io_type="input"):
         total_values_size = 0
         for i, value in enumerate(values):
@@ -63,7 +59,7 @@ class Model(object):
             # show size, KiB or Mib
             value_size_show, value_size_unit = self._cal_show_size(value_size_B)
             value_info = f"{value.op.name} [{value_items} items, {value_size_show} {value_size_unit}, " \
-                          f"{value.dtype.name.upper()}, {value.shape[1:]}]"
+                         f"{value.dtype.name.upper()}, {value.shape[1:]}]"
 
             value_row_list = [f"{io_type}{i+1}", value_info]
             value_row_str = self._get_row(value_row_list)
@@ -76,7 +72,6 @@ class Model(object):
                                  f"{total_values_size_show} {total_values_size_unit}"]
         total_values_row_str = self._get_row(total_values_row_list)
         model_info.append(total_values_row_str)
-
 
     def get_model_info(self, ):
         # load model
@@ -98,25 +93,20 @@ class Model(object):
         self.model_info += layer_flops_list
         self.model_info.append('\n')
 
-
         # 1. model_path
         model_path = ["model file", str(self.model.resolve())]
         model_path_str = self._get_row(model_path)
         self.model_info.append(model_path_str)
 
-
         # 2. model_name
         model_name = ["model name", self.model.stem]
         self.model_info.append(self._get_row(model_name))
 
-
         # 3. input info
         self.get_value_details(net.inputs, self.model_info)
 
-
         # 4. output info
         self.get_value_details(net.outputs, self.model_info, io_type="output")
-
 
         # 5. params
         if hasattr(net, '_collected_trainable_weights'):
@@ -129,14 +119,12 @@ class Model(object):
                            f"{trainable_count} items ({train_count_size} {train_count_unit})"]
         self.model_info.append(self._get_row(params_row_list))
 
-
         # 6. macc & FLOPs
         macc_row_list = ["macc", f"{FLOPs/2}"]
         self.model_info.append(self._get_row(macc_row_list))
 
         flops_row_list = ["FLOPs", f"{FLOPs}"]
         self.model_info.append(self._get_row(flops_row_list))
-
 
         # 7. weights
         weights = net.count_params() * 4
@@ -153,13 +141,11 @@ class Model(object):
 
         return self.model_info
 
-
     @staticmethod
     def write_txt(file, model_info):
         f = open(file, "w+")
         f.write('\n'.join(model_info))
         f.close()
-
 
     @staticmethod
     def print_model_info(model_info):
@@ -190,5 +176,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

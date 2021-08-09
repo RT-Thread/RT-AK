@@ -1,7 +1,7 @@
 # coding=utf-8
 '''
 @ Summary: install plugin with git
-@ Update:  
+@ Update:
 
 @ file:    install_plugin.py
 @ version: 1.0.0
@@ -19,6 +19,7 @@ import os
 import json
 import logging
 from pathlib import Path
+
 
 def readonly_handler(func, path):
     # Change the mode of file, to make it could be used of shutil.rmtree
@@ -38,7 +39,8 @@ def excute_cmd(cmd):
 
 
 def git_plugin(sup_file, platform):
-    if platform == "plugin_example":  return
+    if platform == "plugin_example":
+        return
 
     raw_path = os.getcwd()
     abs_dir = os.path.join("platforms", platform)
@@ -52,8 +54,8 @@ def git_plugin(sup_file, platform):
     try:
         with os.popen("git --version") as p:
             logging.info(p.read().strip())
-    except:
-        raise Exception("Not git found!")
+    except Exception as e:
+        raise logging.error(e)
 
     if Path(abs_dir).exists() and list(Path(abs_dir).iterdir()):
         # swich to rt_ai_tools/platforms/<platform>

@@ -19,16 +19,14 @@ class Msh():
         # create port object
         try:
             self.port = serial.Serial(self.com, 115200, timeout=timeout)
-        except:
-            raise Exception("The port is used now, please disconnect first!")
-
+        except Exception as e:
+            raise print(e)
 
     def __sendmsh(self, cmd):
         print("msh />", end="")
         _ = self.port.write((cmd + "\n").encode())
         b_str = self.port.readall()
         return b_str
-
 
     def scan_ports(self):
         port_info_list = list_ports.comports()
@@ -37,14 +35,12 @@ class Msh():
         ports_list = [port.name for port in port_info_list]
         return ports_list
 
-
     def cmd(self, cmd='', sleepTime=0.5):
         b_str = self.__sendmsh(cmd)
         u_str = str(b_str, encoding="utf-8")
         time.sleep(sleepTime)
         print(u_str)
         return u_str
-
 
     def close(self):
         self.port.close()

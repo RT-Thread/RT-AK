@@ -1,7 +1,7 @@
 # coding=utf-8
 '''
 @ Summary: Base parser about RT-AK tools
-@ Update:  
+@ Update:
 
 @ file:    base_parser.py
 @ version: 1.0.0
@@ -15,6 +15,7 @@
 @ Date:    2021/08/02
 '''
 import argparse
+
 
 def base_parser():
     parser = argparse.ArgumentParser()
