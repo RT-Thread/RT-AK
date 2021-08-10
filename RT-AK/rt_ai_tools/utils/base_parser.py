@@ -24,7 +24,7 @@ def base_parser():
                         help="Saved logging")
     parser.add_argument("--project", type=str, default="",
                         help="Project dir path")
-    parser.add_argument("--model", type=str, default="./Models/keras_mnist.h5",
+    parser.add_argument("--model", type=str, default="./Models/mnist.tflite",
                         help="indicates the original model file paths")
     parser.add_argument("--rt_ai_lib", type=str, default="../rt_ai_lib",
                         help="RT-Thread develop libiraies")
