@@ -1,7 +1,7 @@
 # coding=utf-8
 '''
 @ Summary: wget and unzip
-@ Update:  
+@ Update:
 
 @ file:    download_file.py
 @ version: 1.0.0
@@ -13,6 +13,7 @@ import os
 import wget
 import zipfile
 from pathlib import Path
+
 
 def download_unzip(urls, target):
     target = Path(target)

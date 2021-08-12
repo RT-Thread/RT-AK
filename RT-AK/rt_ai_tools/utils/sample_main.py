@@ -12,7 +12,6 @@
 @ Update:  add sample_list[1:] into main()
 @ Date:    2020/12/10
 '''
-import os
 import logging
 from pathlib import Path
 
@@ -37,7 +36,6 @@ def example_main(project, sample_list=sample_list):
         logging.info("Don't need to modify main.c!!!")
         return file_path
 
-
     # save lines index about "define" and "main"
     index = list()
     for i, line in enumerate(lines):
@@ -46,9 +44,9 @@ def example_main(project, sample_list=sample_list):
         if "main" in line:
             index.append(i+2)
 
-    lines = lines[:index[0]] + [sample_list[0]] + lines[index[0]:index[1]] + \
-            sample_list[1:] + lines[index[1]:]
-
+    lines = \
+        lines[:index[0]] + [sample_list[0]] + \
+        lines[index[0]:index[1]] + sample_list[1:] + lines[index[1]:]
 
     with file_path.open("w") as fw:
         fw.write("".join(lines))
@@ -75,4 +73,3 @@ if __name__ == "__main__":
     shutil.copy(main_file, app_path)
 
     example_main(tmp_project, sample_list)
-    # print(sample_list[0][:-2])

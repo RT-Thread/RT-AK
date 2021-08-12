@@ -1,7 +1,7 @@
 # coding=utf-8
 """
 @ Summary: ai platform
-@ Update:  
+@ Update:
 
 @ file:    utils.py
 @ version: v1.0.2
@@ -27,8 +27,7 @@ from utils import base_parser
 from utils import install_plugin
 
 
-
-def load_sub_parsers(parser, platform:str):
+def load_sub_parsers(parser, platform: str):
     """ parsing sub(plugin) argparsers
     Args:
         parser: base parsers, Namespace
@@ -121,17 +120,15 @@ def main():
     # alis platform name to 'plugin_<platform>'
     platform_using = f"plugin_{opt.platform}"
 
-
     ####################################################################
     #
     # 2. setting logs
     #
     ####################################################################
     logging.basicConfig(filename=opt.log, filemode="w",
-        format="%(asctime)s %(funcName)s [%(levelname)s]: %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-        level=logging.INFO)
-
+                        format="%(asctime)s %(funcName)s [%(levelname)s]: %(message)s",
+                        datefmt="%Y-%m-%d %H:%M:%S",
+                        level=logging.INFO)
 
     ####################################################################
     #
@@ -145,7 +142,6 @@ def main():
         logging.info("All works done...")
         return
 
-
     ####################################################################
     #
     # 4. loadding plugin parsers
@@ -158,7 +154,6 @@ def main():
 
     opt = load_sub_parsers(parser, platform_using)
 
-
     ####################################################################
     #
     # 5. run plugin base on platform
@@ -169,14 +164,12 @@ def main():
     Plugin = plugin_module.Plugin(opt)  # import class
     _ = Plugin.run_plugin()
 
-
     ####################################################################
     #
     # 6. enable RT-AK Lib using the third platform
     #
     ####################################################################
     _ = enable_platform(opt.project, opt.enable_rt_lib)
-
 
     ####################################################################
     #
