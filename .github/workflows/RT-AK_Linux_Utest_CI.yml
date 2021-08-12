@@ -9,6 +9,9 @@ jobs:
       TEST_BSP_ROOT: ../AutoTestBsp
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Setup Python
       uses: actions/setup-python@v2.2.1
       with:
@@ -38,7 +41,6 @@ jobs:
         git clone https://github.com/Lebhoryi/QemuAutoBSP.git $TEST_BSP_ROOT
 
     - name: Run RT-AK
-      uses: actions/checkout@v2
       run: |
         git clone https://github.com/RT-Thread/RT-AK.git
         pushd RT-AK/RT-AK/rt_ai_tools
