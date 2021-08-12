@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
     shutil.copy(main_file, app_path)
 
-    example_main(tmp_project, sample_list)cd ..
+    example_main(tmp_project, sample_list)
