@@ -42,7 +42,7 @@ jobs:
 
     - name: Run RT-AK
       run: |
-        pushd RT-AK/RT-AK/rt_ai_tools
+        pushd RT-AK/rt_ai_tools
         python aitools.py --project=../../../$TEST_BSP_ROOT --platform=example
         popd
     
