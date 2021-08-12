@@ -20,7 +20,8 @@ class Msh():
         try:
             self.port = serial.Serial(self.com, 115200, timeout=timeout)
         except Exception as e:
-            raise print(e)
+            print(e)
+            return
 
     def __sendmsh(self, cmd):
         print("msh />", end="")

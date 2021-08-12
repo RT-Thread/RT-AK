@@ -55,7 +55,8 @@ def git_plugin(sup_file, platform):
         with os.popen("git --version") as p:
             logging.info(p.read().strip())
     except Exception as e:
-        raise logging.error(e)
+        logging.error(e)
+        return
 
     if Path(abs_dir).exists() and list(Path(abs_dir).iterdir()):
         # swich to rt_ai_tools/platforms/<platform>
