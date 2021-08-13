@@ -245,7 +245,7 @@ INIT_APP_EXPORT(rt_ai_mnist_model_init);
 | **Paramaters** | **Description** |
 | - | - |
 | ai | rt_ai_t 模型句柄 |
-| index | 结果索引 |
+| index | 结果索引, 从0开始 |
 | **Return** | -- |
 | NOT NULL | 结果存放地址 |
 | NULL | 获取结果失败 |
@@ -258,7 +258,7 @@ INIT_APP_EXPORT(rt_ai_mnist_model_init);
 | **Paramaters** | **Description** |
 | - | - |
 | ai | rt_ai_t 句柄 |
-| index | 输入索引 |
+| index | 输入索引, 从0开始 |
 | **Return** | -- |
 | NOT NULL | 加载成功 |
 | NULL | 获取失败 |
