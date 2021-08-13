@@ -56,8 +56,8 @@ rt_ai_record_t rt_ai_record_register(rt_ai_record_t record, const char *name)
     {
         return RT_AI_NULL;
     }
-    if(rt_ai_record_find("name")){
-        AI_LOG_E("record %s exist:%s,%d",__FILE__,__LINE__);
+    if(rt_ai_record_find(name)){
+        AI_LOG_E("record %s exist:%s,%d",name,__FILE__,__LINE__);
     }
     if(rt_ai_core_register(&(record->parent),RT_AI_CLASS_RECORD,name) == RT_AI_NULL){
         AI_LOG_I("rt_ai_core_register return RT_AI_NULL in %s,%d",__FILE__,__LINE__);

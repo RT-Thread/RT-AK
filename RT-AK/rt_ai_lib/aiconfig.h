@@ -20,7 +20,7 @@
 /* RTAK suport num of neural model input/output */
 #define RT_AI_IO_MAX 10
 /* enable print runtime performance (now suport run time cost only) */
-#define ENABLE_PERFORMANCE 1
+#define ENABLE_PERFORMANCE 0
 /* use struct rt_ai_record */
 #define RT_AI_USE_RECORD 1
 //#define AILOG_LEVEL           AILOG_INFO
