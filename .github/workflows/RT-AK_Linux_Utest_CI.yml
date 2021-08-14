@@ -60,7 +60,7 @@ jobs:
       run: |
         git clone https://github.com/Lebhoryi/QemuAutoBSP.git $TEST_BSP_ROOT
 
-    - name: Prepare Arm BSP
+    - name: Prepare RISC-V BSP
       if: ${{ matrix.legs.QEMU_ARCH == 'riscv64' && success() }}
       run: |
         git clone https://github.com/EdgeAIWithRTT/qemu-riscv-virt64.git $TEST_BSP_ROOT
