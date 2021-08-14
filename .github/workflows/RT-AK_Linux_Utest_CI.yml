@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   RT-AK-Github-Actions:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     name: ${{ matrix.legs.UTEST }}
     strategy:
       fail-fast: false
