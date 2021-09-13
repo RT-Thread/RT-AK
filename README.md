@@ -1,12 +1,15 @@
+Other Language: [English](README_en.md)
+
 ### 目录
 
-- [1. RT-AK](#RT-AK-简介)
+- [1. RT-AK](#rt-ak-简介)
 - [2. 持续构建](#持续构建)
   - [官方版本](#官方版本)
   - [社区构建](#社区构建)
 - [3. 获得帮助](#获得帮助)
 - [4. 开发者资料](#开发者资料)
 
+[English](README_en.md)
 # RT-AK 简介
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![](https://img.shields.io/badge/Plugin-STM32-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-stm32) [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210)
