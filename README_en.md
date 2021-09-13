@@ -4,9 +4,9 @@ Other Language: [Chinese](README.md)
 
 - [1. RT-AK](#intro)
 - [2. CI Status](#ci-status)
-  - [Official](#official)
-  - [Community](#community)
-- [3. Help](#help)
+  - [Official Builds](#official-builds)
+  - [Community Builds](#community-builds)
+- [3. Get Help](#get-help)
 - [4. Developer Documents](#developer-documents)
 
 # Intro
@@ -15,25 +15,25 @@ Other Language: [Chinese](README.md)
 
 **`RT-AK`: `RT-Thread AI Kit`**
 
-`RT-AK` is AI toolkit for RT-Thread RTOS, which makes it possible to deploy the AI model into a RT-Thread project, by just one command.
+`RT-AK` is AI toolkit for RT-Thread RTOS, which makes it possible to just-one-command deploy the AI model into a RT-Thread project.
 
 `RT-AK` not only provides `API` to support application development, but also takes advantage of the target platform facility for better performance.
 
-With `RT-AK`, it requires just one command to deploy an `AI` model, like this:
+With `RT-AK`, it requires just one command to integrage an `AI` model into RT-Thread application project, like this:
 
 ```bash
 $ python aitools.py --model xxx...
 ```
 
-For more details, please refer [./RT-AK/README.md](./RT-AK/README.md) and [Quick Start](./RT-AK/documents/RT-AK%20Quick%20Start.md).
+For more details, please refer [RT-AK README.md](./RT-AK/README_en.md) and [Quick Start](./RT-AK/documents/RT-AK%20Quick%20Start.md).
 
 ---
 
-**We focus on make it easy to land AI on the edge.**
+**We focus on making it easy to land AI on the edge.**
 
 # CI Status
 
-## Official
+## Official Builds
 
 `RT-AK` Tools Support PC OS:
 
@@ -51,7 +51,7 @@ For more details, please refer [./RT-AK/README.md](./RT-AK/README.md) and [Quick
 | K210       | [![](https://img.shields.io/badge/Plugin-K210-brightgreen)](https://github.com/RT-Thread/RT-AK-plugin-k210) | [RT-AK K210 Quick Start](https://github.com/RT-Thread/RT-AK-plugin-k210/blob/main/docs/RT-AK%20K210%20Quick%20Start.md) |
 | -          | -                                                            | -                                                            |
 
-Both `STM32` and `K210` original toolchain come with model optimization support, but so far only `K210` plugin enabled qunatilization. `STM32` plugin doesn't enable it, yet.
+Both `STM32` and `K210` original toolchain come with model optimization support, so far only `K210` plugin enabled qunatilization. `STM32` plugin didn't enable it, yet.
 
 
 Notes:
@@ -61,15 +61,15 @@ Notes:
 
 For more details, please refer documents in main project (RT-AK) and corresponding platform plugin.
 
-## Community
+## Community Builds
 
 | Build Type | Status | Artifacts |
 | ---------- | ------ | --------- |
 |            |        |           |
 
-# Help
+# Get Help
 
-- [RT-AK FAQ](./RT-AK/documents/RT-AK FAQ.md)
+- [RT-AK FAQ](./RT-AK/documents/RT-AK FAQ EN.md)
 
 - [RT-Thread Forums](https://club.rt-thread.io/)
 
@@ -79,12 +79,12 @@ For more details, please refer documents in main project (RT-AK) and correspondi
 
 # Developer Documents
 
-For more internals, please read documents in [RT-AK/documents](RT-AK/documents), welcome to contribute document, demo project and platform plugin. PS, please use stand alone repository for the plugin.
+For more internals, please read documents in [RT-AK/documents](RT-AK/documents) and source code, welcome to contribute document, demo project and platform plugin. (PS, please use stand-alone repository for new plugin then PR for `RT-AK/rt_ai_tools/platforms/support_platforms.json` registry.)
 
-- [RT-AK FAQ.md](RT-AK/documents/RT-AK FAQ.md)
-- [RT-AK Contributor Guide.md](RT-AK/documents/RT-AK Contributor Guide.md)
-- [RT-AK Dev Guide.md](RT-AK/documents/RT-AK Dev Guide.md)
-- [RT-AK Quick Start.md]((RT-AK/documents/RT-AK%20Quick%20Start.md)
-- [RT-AK Notes on AI Model.md](RT-AK/documents/RT-AK Notes on AI Model.md)
+- [RT-AK FAQ.md](RT-AK/documents/RT-AK FAQ EN.md)
+- [RT-AK Contributor Guide.md](RT-AK/documents/RT-AK Contributor Guide EN.md)
+- [RT-AK Dev Guide.md](RT-AK/documents/RT-AK Dev Guide EN.md)
+- [RT-AK Quick Start.md](RT-AK/documents/RT-AK%20Quick%20Start%20EN.md)
+- [RT-AK Notes on AI Model.md](RT-AK/documents/RT-AK AI Model Notes EN.md)
 
-- [RT-Thread Prgramming Guide.pdf (Chinese)](RT-AK/documents/RT-Thread编程指南.pdf)
+- [RT-Thread Prgramming Guide.pdf ](RT-AK/documents/RT-Thread编程指南.pdf) (PDF is Chinese Only,yet. Please visit https://www.rt-thread.io/document/site/ for online English version)
