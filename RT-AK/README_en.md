@@ -14,7 +14,7 @@
 
 **Update 2021/05/26**
 
-- add English  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start.md)
+- add English  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start%20EN.md)
 
 # 1. Intro
 
@@ -35,7 +35,7 @@ Once RT-AK has done its work, the AI model will be integrated into BSP project. 
 
 App developer may use API of `RT-AK Lib` to make most of the AI parts。 | [API List](./rt_ai_lib/readme.md)
 
-![](./documents/imgs/20210412202832.png)
+![](./documents/imgs/20210412202832_en.png)
 
 <center><font size=2 color="gray">RT-AK Workflow</font></center>
 
@@ -53,7 +53,7 @@ App developer may use API of `RT-AK Lib` to make most of the AI parts。 | [API 
 | description          | [rt_ai_tools/README.md](./rt_ai_tools/README.md)             | [rt_ai_lib/readme.md](./rt_ai_lib/readme.md)                 |
 | programming language | `Python`                                                     | `C`                                                          |
 
-![image-20210618194213915](./documents/imgs/image-20210618194213915.png)
+![image-20210618194213915](./documents/imgs/image-20210618194213915_en.png)
 
 <center><font size=2 color="gray">RT-AK Tools and Lib working together</font></center>
 
@@ -69,9 +69,9 @@ App developer may use API of `RT-AK Lib` to make most of the AI parts。 | [API 
 
 **`RT-AK`  Plugin Structure**
 
-![使用第三方目标平台插件](./documents/imgs/20210331173329.png)
+![使用第三方目标平台插件](./documents/imgs/20210331173329_en.png)
 
-<center><font size=2 color="gray">RT-AK 拓展第三方目标平台</font></center>
+<center><font size=2 color="gray">RT-AK: create plugins to support a new platform</font></center>
 
 `RT-AK` uses plugins to support target platform.
 
@@ -93,7 +93,7 @@ When adding a new target platform for `RT-AK` , there is no need to modify RT-AK
 
 ## 1.3 RT-AK Architecture
 
-![20210412203032](./documents/imgs/20210412203032.png)
+![20210412203032](./documents/imgs/20210412203032_en.png)
 
 <center><font size=2 color="gray">RT-AK architecture</font></center>
 
@@ -192,13 +192,13 @@ Here we use  `scons` building system (Let's say you have get  RT-Thread`  [env](
 | Target platform     | `STM32`                                                      |
 | Project             | `ART-PI BSP`                                                 |
 | Model               | `rt_ai_tools/Model/keras_mnist.h5`                           |
-| Step by step manual | [RT-AK Quick Start EN.md](documents/RT-AK Quick Start EN.md) |
+| Step by step manual | [RT-AK Quick Start EN.md](documents/RT-AK%20Quick%20Start%20EN.md) |
 
 # 4. TODOs
 
 - [x] Linux Support
 - [ ] Windows 7 support
-- [ ] Qemu DEMO
+- [ ] QEMU DEMO
 - [ ] I/O framework based on rt-device
 - [ ] Our own tools and engine
 - [ ] Support quantization

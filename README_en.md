@@ -25,7 +25,7 @@ With `RT-AK`, it requires just one command to integrage an `AI` model into RT-Th
 $ python aitools.py --model xxx...
 ```
 
-For more details, please refer [RT-AK README.md](./RT-AK/README_en.md) and [Quick Start](./RT-AK/documents/RT-AK%20Quick%20Start.md).
+For more details, please refer [RT-AK README.md](./RT-AK/README_en.md) and [Quick Start](./RT-AK/documents/RT-AK%20Quick%20Start%EN.md).
 
 ---
 

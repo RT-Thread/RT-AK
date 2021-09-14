@@ -14,7 +14,7 @@
 
 **Update 2021/05/26**
 
-- add English  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start.md)
+- add English  [RT-AK Quick Start](documents/RT-AK%20Quick%20Start%20EN.md)
 
 # 1. 简介
 
