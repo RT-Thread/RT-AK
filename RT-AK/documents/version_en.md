@@ -1,8 +1,8 @@
-版本说明
+Release notes
 
 | Version | Date       | Description                                                  |
 | ------- | ---------- | ------------------------------------------------------------ |
-| V0.0.1  | 2021/06/21 | 更新首页 README.md: 支持 linux 系统 + 新增支持第三方平台插件说明<br>更新 RT-AK Tools、Lib还有插件的补充说明<br>rt_ai_tools/README.md 重新编写 |
+| V0.0.1  | 2021/06/21 | Update README.md for tools support Linux, 3rd party platform plugin notes<br>Update notes for RT-AK Tools, Lib and plugin<br>Rewrite rt_ai_tools/README.md |
 |         |            |                                                              |
 |         |            |                                                              |
 |         |            |                                                              |
