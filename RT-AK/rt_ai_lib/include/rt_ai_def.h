@@ -13,6 +13,10 @@
 #include <rtthread.h>
 #include <aiconfig.h>
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #define RT_AI_NULL          NULL
 #define RT_AI_OK            0
 #define RT_AI_ERROR         1
@@ -139,4 +143,8 @@ struct rt_ai_record
     rt_ai_uint32_t  record;
 };
 
+
+#ifdef __cplusplus
+}
+#endif
 #endif
