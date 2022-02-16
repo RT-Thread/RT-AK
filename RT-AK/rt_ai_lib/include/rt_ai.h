@@ -10,6 +10,10 @@
 
 #ifndef _RT_AI_H
 #define _RT_AI_H
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include <rt_ai_def.h>
 #include <rt_ai_common.h>
 
@@ -19,4 +23,8 @@ rt_err_t rt_ai_run(rt_ai_t ai, void (*callback)(void * arg), void *arg);
 rt_ai_t  rt_ai_find(const char *name);
 rt_ai_buffer_t* rt_ai_output(rt_ai_t ai, rt_uint32_t index);
 rt_err_t rt_ai_config(rt_ai_t ai, int cmd, rt_ai_buffer_t *arg);
+
+#ifdef __cplusplus
+}
 #endif
+#endif // _RT_AI_H
