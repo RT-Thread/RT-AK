@@ -12,6 +12,7 @@
 #define __RT_AI_DEF__
 #include <rtthread.h>
 #include <aiconfig.h>
+
 #ifdef __cplusplus
 extern "C"{
 #endif
@@ -146,5 +147,4 @@ struct rt_ai_record
 #ifdef __cplusplus
 }
 #endif
-
 #endif

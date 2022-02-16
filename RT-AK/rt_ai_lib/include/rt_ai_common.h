@@ -14,9 +14,11 @@
 
 #include <rt_ai_def.h>
 #include <aiconfig.h>
+
 #ifdef __cplusplus
 extern "C"{
 #endif
+
 #define RT_AI_FLAG_INITED   0x01
 #define RT_AI_FLAG_LOADED   0X02
 #define RT_AI_FLAG_RUN      0x04
@@ -104,6 +106,7 @@ if (!(_expr))                                                                   
 #define rt_ai_del(_ptr)             rt_ai_free(_ptr)
 
 void rt_ai_allocate_buffer(rt_ai_t ai, rt_ai_buffer_t *buf);
+
 #ifdef __cplusplus
 }
 #endif

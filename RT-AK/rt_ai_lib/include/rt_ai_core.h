@@ -16,6 +16,7 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+
 rt_ai_core_t rt_ai_core_register(struct rt_ai_core *object, enum rt_ai_obj_type type, const char *name);
 rt_ai_core_t rt_ai_core_find(const char *name, rt_uint8_t type);
 void rt_ai_core_detach(rt_ai_core_t object);
@@ -23,6 +24,5 @@ void rt_ai_core_detach(rt_ai_core_t object);
 #ifdef __cplusplus
 }
 #endif
-
 #endif
 

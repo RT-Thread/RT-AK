@@ -11,9 +11,11 @@
 #ifndef __RT_AI_RUNTIME_H__
 #define __RT_AI_RUNTIME_H__
 #include <rt_ai_def.h>
+
 #ifdef __cplusplus
 extern "C"{
 #endif
+
 void run_done(void *arg);
 void run_entry(rt_ai_t ai);
 rt_ai_record_t rt_ai_record_find(const char *name);
@@ -28,6 +30,7 @@ rt_ai_timestamp_t statistic_time_interval(const char *name);
 
 #define STATISTIC_TIME_INTERVAL(_name) \
     statistic_time_interval(_name)
+
 #ifdef __cplusplus
 }
 #endif
