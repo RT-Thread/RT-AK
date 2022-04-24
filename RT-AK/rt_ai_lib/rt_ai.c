@@ -39,9 +39,9 @@
 rt_ai_t rt_ai_find(const char *name)
 {
     RT_AI_ASSERT_RETURN_NULL(name);
-    rt_ai_core_t core = NULL;
+    rt_ai_core_t core = RT_NULL;
     core = rt_ai_core_find(name,RT_AI_CLASS_HANDLE);
-    if(core == NULL){
+    if(core == RT_NULL){
         AI_LOG_I("rt_ai_core_find return NULL %s,%d!\n",__FILE__,__LINE__);
         return RT_AI_NULL;
     }
@@ -70,7 +70,7 @@ rt_err_t rt_ai_register(rt_ai_t ai, const char *name, rt_uint16_t flags, int (*c
         return -RT_AI_ERROR;
     }
     AI_LOG_I("register model %s\n", name);
-    if(rt_ai_core_register(&(ai->parent),RT_AI_CLASS_STATIC_HANDLE,name) == NULL){
+    if(rt_ai_core_register(&(ai->parent),RT_AI_CLASS_STATIC_HANDLE,name) == RT_NULL){
         AI_LOG_E("rt_ai_core_register err!%s,%d\n",__FILE__,__LINE__);
     }
     return RT_AI_OK;
