@@ -17,7 +17,7 @@
 extern "C"{
 #endif
 
-#define RT_AI_NULL          NULL
+#define RT_AI_NULL          RT_NULL
 #define RT_AI_OK            0
 #define RT_AI_ERROR         1
 #define RT_AI_EREADY        2
