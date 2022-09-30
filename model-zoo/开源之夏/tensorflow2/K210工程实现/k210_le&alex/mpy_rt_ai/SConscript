@@ -1,0 +1,14 @@
+import rtconfig
+from building import *
+import os
+cwd     = GetCurrentDir()
+CPPPATH = []
+src = []
+
+if GetDepend('PRJ_USING_RT_AK_EXMODS'):
+    CPPPATH = [cwd]
+    src = Glob('*.c') + Glob('*.cpp')
+
+group = DefineGroup('RT-AK-LIB', src, depend = ['PRJ_USING_RT_AK_EXMODS'], CPPPATH = CPPPATH)
+
+Return('group')

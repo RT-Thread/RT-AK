@@ -1,0 +1,16 @@
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+
+path = [cwd]
+
+src = []
+
+if GetDepend(['OMV_HAL_K210']):
+    src +=  Glob('k210/*.c')
+    path = [cwd + '/k210']
+
+group = DefineGroup('openMV', src, depend = [], CPPPATH = path)
+
+Return('group')

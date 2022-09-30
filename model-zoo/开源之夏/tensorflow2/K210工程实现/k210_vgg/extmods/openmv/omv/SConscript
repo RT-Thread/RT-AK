@@ -1,0 +1,34 @@
+# RT-Thread building script for component
+
+from building import *
+
+cwd     = GetCurrentDir()
+src     = Glob('*.c')
+CPPPATH = [cwd]
+CPPPATH += [cwd + '/img']
+CPPPATH += [cwd + '/py']
+
+if GetDepend('OMV_BOARD_KD233'):
+    CPPPATH += [cwd + '/boards/KD233']
+
+src += Glob('cameras/*.c')
+src += Glob('img/*.c')
+src += Glob('py/*.c')
+
+if not GetDepend('IMLIB_ENABLE_YUV_LUT'):
+    SrcRemove(src, 'img/yuv_tab.c')
+
+if not GetDepend('IMLIB_ENABLE_LAB_LUT'):
+    SrcRemove(src, 'img/lab_tab.c')
+
+group = DefineGroup('openMV', src, depend = [], CPPPATH = CPPPATH)
+
+objs = [group]
+
+list = os.listdir(cwd)
+
+for item in list:
+    if os.path.isfile(os.path.join(cwd, item, 'SConscript')):
+        objs = objs + SConscript(os.path.join(item, 'SConscript'))
+
+Return('objs')

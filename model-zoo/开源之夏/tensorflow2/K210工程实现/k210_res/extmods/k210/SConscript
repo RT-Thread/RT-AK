@@ -1,0 +1,37 @@
+# RT-Thread building script for component
+
+from building import *
+
+cwd     = GetCurrentDir()
+src     = []
+CPPPATH = []
+
+if GetDepend('EXTMODS_MISC_USING_K210'):
+    src += ['modk210.c']
+    CPPPATH += [cwd]
+
+if GetDepend('EXTMODS_K210_DVP'):
+    src += ['py_camera.c', 'py_img.c', 'py_helper.c']
+    src += Glob('imglib/*.c')
+    CPPPATH += [cwd+'/imglib']
+    
+if GetDepend('EXTMODS_K210_LCDCTL'):
+    src += ['py_lcdctl.c']
+
+if GetDepend('EXTMODS_K210_I2S'):
+    src += ['py_i2s.c']
+
+if GetDepend('EXTMODS_K210_SHA256'):
+    src += ['py_sha256.c']
+
+if GetDepend('EXTMODS_K210_FPIOA'):
+    src += ['py_fpioa.c']
+
+if GetDepend('EXTMODS_K210_FFT'):
+    src += ['py_fft.c']
+
+group = DefineGroup('extmods', src, depend = ['PRJ_USING_EXTMODS_MISC'], CPPPATH = CPPPATH)
+
+objs = [group]
+
+Return('objs')
