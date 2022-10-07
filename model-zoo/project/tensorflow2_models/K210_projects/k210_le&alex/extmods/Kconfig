@@ -1,0 +1,75 @@
+menu "mpy-extmods"
+config PRJ_USING_EXTMODS_MISC
+    bool "Enable MPY extmods"
+    select PKG_USING_MICROPYTHON
+    select MICROPYTHON_USING_USEREXTMODS
+    default y
+
+    if PRJ_USING_EXTMODS_MISC
+        menuconfig EXTMODS_MISC_USING_K210
+            bool "Enable K210 extmods"
+            default y
+
+            if EXTMODS_MISC_USING_K210
+                config EXTMODS_K210_LCDCTL
+                    bool "Enable LCD Control"
+                    default n
+                config EXTMODS_K210_DVP
+                    bool "Enable DVP Camera"
+                    select BSP_USING_CAMERA
+                    depends on !PKG_USING_OPENMV_CP
+                    default n
+                config EXTMODS_K210_I2S
+                    bool "Enable I2S module"
+                    default n
+                config EXTMODS_K210_FPIOA
+                    bool "Enable FPIOA"
+                    default n
+                config EXTMODS_K210_SHA256
+                    bool "Enable SHA256"
+                    default n
+                config EXTMODS_K210_FFT
+                    bool "Enable FFT"
+                    default n
+
+            endif
+
+        config PKG_USING_OPENMV_CP
+            bool "Enable OpenMV(Cross-Platform)"
+            select PKG_USING_MICROPYTHON
+            default n
+
+            if PKG_USING_OPENMV_CP
+                choice
+                    prompt "Board type"
+                    default OMV_BOARD_KD233
+
+                    config OMV_BOARD_KD233
+                        bool "Kendryte KD233"
+                endchoice
+
+                if OMV_BOARD_KD233
+                    config OMV_HAL_K210
+                        bool "Hal K210"
+                        default y
+                endif
+
+                config OMV_RAW_BUF_SIZE
+                    int "Total Framebuffer Size"
+                    default 230400
+
+                config IMLIB_ENABLE_LAB_LUT
+                    bool "Enable LAB LUT"
+                    default n
+
+                config IMLIB_ENABLE_YUV_LUT
+                    bool "Enable YUV LUT"
+                    default n        
+            endif
+
+        config PRJ_USING_RT_AK_EXMODS
+            bool "Enable RT-AK MPY module"
+            default n	
+		
+    endif
+endmenu

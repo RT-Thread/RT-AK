@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/PATH/delimiter=;
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/PATH/operation=replace
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/PATH/value=${studio_install_path}/platform/env_released/env/tools/Python27/Scripts
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/RTT_EXEC_PATH/delimiter=;
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/RTT_EXEC_PATH/operation=replace
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/RTT_EXEC_PATH/value=${toolchain_install_path}/${risc-v-gcc-kendryte_relative_path}/bin
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/append=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.553091094/appendContributed=true

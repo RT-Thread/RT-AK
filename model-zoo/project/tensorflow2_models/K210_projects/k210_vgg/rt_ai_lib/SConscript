@@ -1,0 +1,15 @@
+import rtconfig
+from building import *
+import os
+cwd     = GetCurrentDir()
+CPPPATH = [cwd]
+src     = Glob('*.c')
+list = os.listdir(cwd)
+for d in list:
+    path = os.path.join(cwd,d)
+    if os.path.isdir(path):
+        src += Glob(d+'/*.c')
+        CPPPATH += [path]
+group = DefineGroup('RT-AK-LIB', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')
