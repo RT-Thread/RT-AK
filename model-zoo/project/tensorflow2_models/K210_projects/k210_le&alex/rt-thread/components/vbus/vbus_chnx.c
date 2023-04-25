@@ -233,11 +233,11 @@ void rt_vbus_chnx_register_disconn(rt_device_t dev,
 {
     struct rt_vbus_dev *vdev = dev->user_data;
 
-    RT_ASSERT(vdev->chnr != 0);
-
-    if (vdev)
+    if (vdev){
+        RT_ASSERT(vdev->chnr != 0);
         rt_vbus_register_listener(vdev->chnr, RT_VBUS_EVENT_ID_DISCONN,
                                   indi, ctx);
+    } 
 }
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
