@@ -337,6 +337,7 @@ static rt_int16_t zrec_data32(rt_uint8_t *buf, rt_int16_t len)
 
     crc_cnt = 0;   crc = 0xffffffffL;
     Rxcount = 0;
+    p = buf;
     while (buf <= p+len)
     {
         if ((res = zread_byte()) & ~0377)
