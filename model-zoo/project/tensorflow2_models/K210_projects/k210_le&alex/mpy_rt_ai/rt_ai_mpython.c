@@ -60,7 +60,7 @@ STATIC mp_obj_t py_rt_ai_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
     if(stat){
         mp_raise_OSError(stat);
     }
-    if(!handle->info.input_n && !handle->info.input_n){
+    if(!handle->info.input_n && !handle->info.output_n){
         handle->info.input_n = inputs_size(handle); __debug(handle->info.input_n);
         handle->info.output_n = outputs_size(handle); __debug(handle->info.output_n);
 
